@@ -33,6 +33,8 @@ func Execute(appVersion string, appSourceDate string) {
 
 type Config struct {
 	Repos []Repo
+	IgnoreRegex []string
+	IgnoreExtensions []string
 }
 
 type Repo struct {
@@ -82,7 +84,7 @@ var rootCmd = &cobra.Command{
 
 		var repos = config.Repos
 
-		fmt.Printf("Analysing %s Repos\n",string(len(repos)))
+		fmt.Printf("Analysing %d Repos\n",len(repos))
 
 		user, err := user.Current()
 		if err != nil {
@@ -129,63 +131,91 @@ var rootCmd = &cobra.Command{
 				log.Fatal(err)
 			}
 
-			// Find all the files we care about (with some excluded)
+			// Open a file for tmp output...
+			fOut, err := os.OpenFile("output.txt", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0600)
+			if err != nil {
+				panic(err)
+			}
+			defer fOut.Close()
+
+			// TODO also be able to exclude stuff in a specific repo? maybe...?
+			// Build a bunch of stuff to exclude
+			var ignoreRegexes []*regexp.Regexp
 			pathIgnoreRegex, e := regexp.Compile("^.+/\\.git/.+$")
 			if e != nil {
 				log.Fatal(e)
 			}
+			ignoreRegexes = append(ignoreRegexes, pathIgnoreRegex)
+			// Specific full regexes
+			for _, ignoreRegexString := range config.IgnoreRegex {
+				newRegex, e := regexp.Compile(ignoreRegexString)
+				if e != nil {
+					log.Fatal(e)
+				}
+				ignoreRegexes = append(ignoreRegexes, newRegex)
+			}
+			// Just file extensions
+			for _, fileExtension := range config.IgnoreExtensions {
+				newRegex, e := regexp.Compile("^.+\\." + fileExtension + "$")
+				if e != nil {
+					log.Fatal(e)
+				}
+				ignoreRegexes = append(ignoreRegexes, newRegex)
+			}
+
+			// Find all the files we care about (with some excluded)
 			e = filepath.Walk(repo.DirNameInDir(gitDir), func(path string, info os.FileInfo, err error ) error {
 				if info.IsDir() || err != nil {
 					return nil
 				}
-				// Ignore the .git directory
-				if pathIgnoreRegex.MatchString(path) {
-					//ignored
-				} else {
-					// Run a blame on the files that we are looking at
-					fileInRepo := strings.Replace(path,repo.DirNameInDir(gitDir) + "/","", -1)
-					head, _ := Repo.Head()
-					commit, _ := Repo.CommitObject(head.Hash())
-					// TODO do something with blame...
-					/*blameOut, err := */git.Blame(commit,fileInRepo)
-					if err != nil {
-						log.Fatal(err)
+				// Ignore various files
+				for _, ignoreRegex := range ignoreRegexes {
+					if ignoreRegex.MatchString(path) {
+						return nil
 					}
 				}
+
+				// Run a blame on the files that we are looking at
+				fileInRepo := strings.Replace(path,repo.DirNameInDir(gitDir) + "/","", -1)
+				head, _ := Repo.Head()
+				commit, _ := Repo.CommitObject(head.Hash())
+				// TODO do something with blame...
+				blameOut, err := git.Blame(commit,fileInRepo)
+				if err != nil {
+					log.Fatal(err)
+				}
+
+				// Calculate for file...
+				lineAuthorCounter := map[string]int{}
+				// TODO could do filtering of individual lines here... (comment blocks etc?)
+				for j := 0; j < len(blameOut.Lines); j++ {
+					line := blameOut.Lines[j]
+					if _, ok := lineAuthorCounter[line.Author]; ok {
+						lineAuthorCounter[line.Author]++
+					} else {
+						lineAuthorCounter[line.Author] = 1
+					}
+				}
+
+				// Write to file..
+				for author, lineCount := range lineAuthorCounter {
+					lineToWrite := fmt.Sprintf("%s %s %d\n", blameOut.Path, author, lineCount)
+					fmt.Print(lineToWrite)
+					if _, err = fOut.WriteString(lineToWrite); err != nil {
+						panic(err)
+					}
+				}
+
 				return nil
 			})
 			if e != nil {
 				log.Fatal(e)
 			}
 
-
 		}
 
-		/**
-		type BlameResult struct {
-	// Path is the path of the File that we're blaming.
-	Path string
-	// Rev (Revision) is the hash of the specified Commit used to generate this result.
-	Rev plumbing.Hash
-	// Lines contains every line with its authorship.
-	Lines []*Line
-}
-**/
+		// TODO fixme, got 2021/01/17 10:56:17 contents and commits have different length
 
-
-/**
-// Line values represent the contents and author of a line in BlamedResult values.
-type Line struct {
-	// Author is the email address of the last author that modified the line.
-	Author string
-	// Text is the original text of the line.
-	Text string
-	// Date is when the original text of the line was introduced
-	Date time.Time
-	// Hash is the commit hash that introduced the original line
-	Hash plumbing.Hash
-}
-**/ 
 
 		// TODO use regexes to separate files into "projects" or "areas"?
 		// TODO join the blames together in these areas to see the % that is written by who?

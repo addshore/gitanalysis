@@ -1,4 +1,12 @@
 {
+	"ignoreRegex": [
+		"^.+\\/\\.[a-z_]+(\\.[a-z]+)?$",
+		"^.+\\/.+/\\.phan/.+$",
+		"^.+\\/.+/\\.github/.+$"
+	],
+	"ignoreExtensions" : [
+		"md"
+	],
 	"repos": [
 		{
 			"url": "https://github.com/wikimedia/Wikibase.git"
