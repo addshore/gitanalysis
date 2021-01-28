@@ -1,15 +1,25 @@
 {
-	"ignoreRegex": [
-		"^.+\\/\\.[a-z_]+(\\.[a-z]+)?$",
-		"^.+\\/.+/\\.phan/.+$",
-		"^.+\\/.+/\\.github/.+$"
-	],
-	"ignoreExtensions" : [
-		"md"
-	],
-	"repos": [
+	"code": [
 		{
-			"url": "https://github.com/wikimedia/Wikibase.git"
+			"name": "mwext-Wikibase",
+			"git": "https://github.com/wikimedia/Wikibase.git"
+		},
+		{
+			"name": "mwext-WikibaseLexeme",
+			"git": "https://github.com/wikimedia/WikibaseLexeme.git"
 		}
-	]
+	],
+	"teams": {
+		"Wikidata Wikibase": {
+			"current": [
+				"addshorewiki@gmail.com",
+				"ladsgroup@gmail.com"
+			],
+			"previous": [
+				"alaa.sarhan@wikimedia.de",
+				"sarhan.alaa@protonmail.com",
+				"aleksey.bekh-ivanov@wikimedia.de"
+			]
+		}
+	}
 }

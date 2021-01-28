@@ -1,8 +1,29 @@
 # git analysis
 
-## analyze.sh
+## Usage
+
+Create a JSON file to input.
+
+Then run the script:
 
 ```sh
-./analyze.sh mwext-Wikibase https://github.com/wikimedia/Wikibase.git master
-./analyze.sh mwext-WikibaseLexeme https://github.com/wikimedia/mediawiki-extensions-WikibaseLexeme.git master
+node main.js input.json
 ```
+
+And wait for the processing the happen...
+
+## Global behaviours
+
+Some files are globally ignored for speed:
+
+- `.tests.js$`
+- `tests/`
+- `i18n/`
+- `.phan/`
+- `.github/`
+
+In the future these might also be configurable...
+
+## Configuration
+
+TBA

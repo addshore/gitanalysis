@@ -2,7 +2,6 @@
   "name": "gitanalysis",
   "version": "0.0.0",
   "description": "WORK IN PROGRESS git multi git repo author and ownership analysis",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,5 +9,5 @@
     "type": "git",
     "url": "git+https://github.com/addshore/gitanalysis.git"
   },
-  "author": "",
+  "author": ""
 }

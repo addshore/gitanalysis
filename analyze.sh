@@ -1,13 +1,19 @@
 #!/bin/bash
+# Fetches the git repo into ./code/<PROJECT_NAME> and gets .gitblame output for all of the files
+# Processes this into an easy to read <ref>.allcounts file which contains lines that look like:
+# <file> <email> <line count>
+# 
+# Examples:
+#./analyze.sh <PROJECT_NAME> <PROJECT_REPO> <REF>
+#./analyze.sh mwext-Wikibase https://github.com/wikimedia/Wikibase.git master
+#./analyze.sh mwext-WikibaseLexeme https://github.com/wikimedia/mediawiki-extensions-WikibaseLexeme.git REL1_35
 
 PROJECT_NAME=$1
 PROJECT_REPO=$2
 REF=$3
 
-# Convenience
-
 # Get the code
-echo "Getting code for $PROJECT_REPO"
+echo "$PROJECT_NAME: Getting code for $PROJECT_REPO"
 if [ -d ./code/$PROJECT_NAME ] 
 then
 	git --git-dir ./code/$PROJECT_NAME/.git fetch
@@ -19,7 +25,8 @@ OUTPUT_FILES=./code/$PROJECT_NAME/$REF.allfiles
 OUTPUT_COUNTS=./code/$PROJECT_NAME/$REF.allcounts
 
 # List the files
-echo "Collecting file list"
+echo "$PROJECT_NAME: Collecting file list"
+# TODO don't hardcode the global ignore list...
 git --git-dir ./code/$PROJECT_NAME/.git ls-tree -r --name-only $REF \
 	| grep -v ".tests.js$"\
 	| grep -v "Test.php$"\
@@ -36,10 +43,10 @@ while read FILE_PATH; do
 	fi
 done < $OUTPUT_FILES
 
-FILE_COUNT=$(cat $OUTPUT_COUNTS | wc -l)
+FILE_COUNT=$(cat $OUTPUT_FILES | wc -l)
 
 # Save blame for all of the files
-echo "Generating blames for $FILE_COUNT files"
+echo "$PROJECT_NAME: Generating blames for $FILE_COUNT files"
 while read FILE_PATH; do
 	OUTPUT_BLAME=./code/$PROJECT_NAME/$FILE_PATH.$REF.gitblame
 	OUTPUT_DIR=$(dirname $OUTPUT_BLAME)
@@ -51,7 +58,7 @@ done < $OUTPUT_FILES
 echo "" > $OUTPUT_COUNTS
 
 # Calculate the counts
-echo "Collecting results $FILE_COUNT"
+echo "$PROJECT_NAME: Collecting results $FILE_COUNT"
 while read FILE_PATH; do
 	OUTPUT_BLAME=./code/$PROJECT_NAME/$FILE_PATH.$REF.gitblame
 	declare -A AUTHORS
@@ -71,4 +78,4 @@ while read FILE_PATH; do
 	done
 done < $OUTPUT_FILES
 
-echo "Done!"
+echo "$PROJECT_NAME: Done!"
