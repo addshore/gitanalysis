@@ -1,4 +1,2 @@
-vendor
-build
-
-output.txt
+.vscode
+code
