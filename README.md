@@ -1,13 +1,5 @@
 # git analysis
 
-WIP and currently doing EVIL things...
-
-```
-mwext-Wikibase/view/lib/wikibase-tainted-ref/.eslintrc.js tools.libraryupgrader@tools.wmflabs.org 3798
-```
-
-?????
-
 ## Usage
 
 Create a JSON file to input.
@@ -15,7 +7,7 @@ Create a JSON file to input.
 Then run the script:
 
 ```sh
-node analyze.js input.json
+node analyze.js config/wmde-wdwb.json
 ```
 
 And wait for the processing the happen...

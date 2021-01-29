@@ -7,6 +7,10 @@
 		{
 			"name": "mwext-WikibaseLexeme",
 			"git": "https://github.com/wikimedia/WikibaseLexeme.git"
+		},
+		{
+			"name": "gh-query-builder",
+			"git": "https://github.com/wmde/query-builder.git"
 		}
 	],
 	"team": [
@@ -30,25 +34,28 @@
 	],
 	"components": {
 		"Repo": [
-			"mwext-Wikibase/repo"
+			"mwext-Wikibase/repo/"
 		],
 		"RepoView": [
-			"mwext-Wikibase/view"
+			"mwext-Wikibase/view/"
 		],
 		"Client": [
-			"mwext-Wikibase/client"
+			"mwext-Wikibase/client/"
 		],
 		"Lib": [
-			"mwext-Wikibase/lib"
+			"mwext-Wikibase/lib/"
 		],
 		"DataAccess": [
-			"mwext-Wikibase/data-access"
+			"mwext-Wikibase/data-access/"
 		],
 		"Bridge": [
-			"mwext-Wikibase/client/data-bridge"
+			"mwext-Wikibase/client/data-bridge/"
 		],
 		"Lexeme": [
-			"mwext-WikibaseLexeme"
+			"mwext-WikibaseLexeme/"
+		],
+		"QueryBuilder": [
+			"gh-query-builder/"
 		]
 	}
 }

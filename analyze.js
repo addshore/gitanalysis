@@ -38,10 +38,10 @@ async function main() {
     // Collect the input for each repo...
     var childProcesses = [];
     // TODO run the below again...
-    // input.code.forEach(function(codeDetails) {
-    //     // TODO don't hardcode master
-    //     childProcesses.push(spawnWithOut(spawn("./analyze.sh", [codeDetails.name, codeDetails.git, "master"])));
-    // });
+    input.code.forEach(function(codeDetails) {
+        // TODO don't hardcode master
+        childProcesses.push(spawnWithOut(spawn("./analyze.sh", [codeDetails.name, codeDetails.git, "master"])));
+    });
 
     // Wait for them to finish running
     let waitingForProcessing = true;
@@ -69,10 +69,10 @@ async function main() {
 
     // Join all the counts together
     // TODO re enable this
-    // let spawned = spawnWithOut(spawn("./join.sh", ["master"]))
-    // while (spawned.exitCode == null) {
-    //     await new Promise(resolve => setTimeout(resolve, 250))
-    // }
+    let spawned = spawnWithOut(spawn("./join.sh", ["master"]))
+    while (spawned.exitCode == null) {
+        await new Promise(resolve => setTimeout(resolve, 250))
+    }
 
     // Generate data for each component
     // TODO don't hardcode master
@@ -112,7 +112,7 @@ async function main() {
             }
         }
 
-        // TODO output ungrouped files to a useful list?
+        // TODO output un-grouped files to a useful list?
 
         if(!compiledData.hasOwnProperty(component)){
             compiledData[component] = {
