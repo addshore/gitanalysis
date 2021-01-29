@@ -1,5 +1,5 @@
 #!/bin/bash
-# Fetches the git repo into ./code/<PROJECT_NAME> and gets .gitblame output for all of the files
+# Fetches the git repo into ./data/<PROJECT_NAME> and gets .gitblame output for all of the files
 # Processes this into an easy to read <ref>.allcounts file which contains lines that look like:
 # <file> <email> <line count>
 # 
@@ -14,20 +14,20 @@ REF=$3
 
 # Get the code
 echo "$PROJECT_NAME: Getting code for $PROJECT_REPO"
-if [ -d ./code/$PROJECT_NAME ] 
+if [ -d ./data/$PROJECT_NAME ] 
 then
-	git --git-dir ./code/$PROJECT_NAME/.git fetch
+	git --git-dir ./data/$PROJECT_NAME/.git fetch
 else
-	git clone --no-checkout $PROJECT_REPO ./code/$PROJECT_NAME
+	git clone --no-checkout $PROJECT_REPO ./data/$PROJECT_NAME
 fi
 
-OUTPUT_FILES=./code/$PROJECT_NAME/$REF.allfiles
-OUTPUT_COUNTS=./code/$PROJECT_NAME/$REF.allcounts
+OUTPUT_FILES=./data/$PROJECT_NAME/$REF.allfiles
+OUTPUT_COUNTS=./data/$PROJECT_NAME/$REF.allcounts
 
 # List the files
 echo "$PROJECT_NAME: Collecting file list"
 # TODO don't hardcode the global ignore list...
-git --git-dir ./code/$PROJECT_NAME/.git ls-tree -r --name-only $REF \
+git --git-dir ./data/$PROJECT_NAME/.git ls-tree -r --name-only $REF \
 	| grep -v ".tests.js$"\
 	| grep -v "Test.php$"\
 	| grep -v "tests/"\
@@ -48,19 +48,20 @@ FILE_COUNT=$(cat $OUTPUT_FILES | wc -l)
 # Save blame for all of the files
 echo "$PROJECT_NAME: Generating blames for $FILE_COUNT files"
 while read FILE_PATH; do
-	OUTPUT_BLAME=./code/$PROJECT_NAME/$FILE_PATH.$REF.gitblame
+	OUTPUT_BLAME=./data/$PROJECT_NAME/$FILE_PATH.$REF.gitblame
 	OUTPUT_DIR=$(dirname $OUTPUT_BLAME)
 	mkdir -p $OUTPUT_DIR
-	git --git-dir ./code/$PROJECT_NAME/.git blame --show-email $REF $FILE_PATH > $OUTPUT_BLAME
+	git --git-dir ./data/$PROJECT_NAME/.git blame --show-email $REF $FILE_PATH > $OUTPUT_BLAME
 done < $OUTPUT_FILES
 
 # Create a fresh file for the final output counts
-echo "" > $OUTPUT_COUNTS
+rm $OUTPUT_COUNTS
+touch $OUTPUT_COUNTS
 
 # Calculate the counts
 echo "$PROJECT_NAME: Collecting results $FILE_COUNT"
 while read FILE_PATH; do
-	OUTPUT_BLAME=./code/$PROJECT_NAME/$FILE_PATH.$REF.gitblame
+	OUTPUT_BLAME=./data/$PROJECT_NAME/$FILE_PATH.$REF.gitblame
 	declare -A AUTHORS
 	# EXAMPLE: fca2a09a0d2 (<addshorewiki@gmail.com> 2020-01-10 10:32:46 +0000  1) <?php
 	# 1 hash, 2 email, 3 date time, 4 line number, 5 line

@@ -9,17 +9,46 @@
 			"git": "https://github.com/wikimedia/WikibaseLexeme.git"
 		}
 	],
-	"teams": {
-		"Wikidata Wikibase": {
-			"current": [
-				"addshorewiki@gmail.com",
-				"ladsgroup@gmail.com"
-			],
-			"previous": [
-				"alaa.sarhan@wikimedia.de",
-				"sarhan.alaa@protonmail.com",
-				"aleksey.bekh-ivanov@wikimedia.de"
-			]
-		}
+	"team": [
+		"addshorewiki@gmail.com",
+		"adamshorland@gmail.com",
+		"itamar.givon@wikimedia.de",
+		"perside.rosalie@wikimedia.de",
+		"guergana.tzatchkova@wikimedia.de",
+		"jakob.warkotsch@wikimedia.de",
+		"noa.rave@wikimedia.de",
+		"lucas.werkmeister@wikimedia.de",
+		"thomas.arrow_ext@wikimedia.de",
+		"tobias.andersson@wikimedia.de",
+		"silvan.heintze@wikimedia.de",
+		"michael.grosse@wikimedia.de",
+		"tonina.zhelyazkova@wikimedia.de",
+		"ladsgroup@gmail.com",
+		"Ladsgroup@gmail.com",
+		"j.warkotsch@gmail.com",
+		"hoo@online.de"
+	],
+	"components": {
+		"Repo": [
+			"mwext-Wikibase/repo"
+		],
+		"RepoView": [
+			"mwext-Wikibase/view"
+		],
+		"Client": [
+			"mwext-Wikibase/client"
+		],
+		"Lib": [
+			"mwext-Wikibase/lib"
+		],
+		"DataAccess": [
+			"mwext-Wikibase/data-access"
+		],
+		"Bridge": [
+			"mwext-Wikibase/client/data-bridge"
+		],
+		"Lexeme": [
+			"mwext-WikibaseLexeme"
+		]
 	}
 }

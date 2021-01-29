@@ -9,5 +9,8 @@
     "type": "git",
     "url": "git+https://github.com/addshore/gitanalysis.git"
   },
-  "author": ""
+  "author": "",
+  "dependencies": {
+    "n-readlines": "^1.0.1"
+  }
 }
