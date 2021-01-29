@@ -4,6 +4,7 @@ Work In Progress: Tooling to see what % of a set of codebases was written by a t
 
 **TODOs:**
 
+- Work for repos that don't have a "master" branch (like release prototype and arch docs)
 - Input of a date (rather than master), and git would be used to find a commit to look at per repo etc.
 - Think about allowing the definition of multiple teams?
 - Stop files from being allowed in multiple components? (maybe?) Maybe with regex includes and excludes?
