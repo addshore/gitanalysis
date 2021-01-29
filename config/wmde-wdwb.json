@@ -1,40 +1,77 @@
 {
-	"code": [
-		{
-			"name": "mwext-Wikibase",
-			"git": "https://github.com/wikimedia/Wikibase.git"
-		},
-		{
-			"name": "mwext-WikibaseLexeme",
-			"git": "https://github.com/wikimedia/WikibaseLexeme.git"
-		},
-		{
-			"name": "gh-query-builder",
-			"git": "https://github.com/wmde/query-builder.git"
-		}
-	],
+	"code": {
+		"mwext-Wikibase": "https://github.com/wikimedia/Wikibase.git",
+		"mwext-WikibaseLexeme": "https://github.com/wikimedia/mediawiki-extensions-WikibaseLexeme.git",
+		"mwext-WikibaseQualityConstraints": "https://github.com/wikimedia/mediawiki-extensions-WikibaseQualityConstraints.git",
+		"mwext-WikibaseManifest": "https://github.com/wikimedia/mediawiki-extensions-WikibaseManifest.git",
+		"mwext-WikibaseMediaInfo": "https://github.com/wikimedia/mediawiki-extensions-WikibaseMediaInfo.git",
+		"mwext-WikibaseCirrusSearch": "https://github.com/wikimedia/mediawiki-extensions-WikibaseCirrusSearch.git",
+		"mwext-WikibaseLexemeCirrusSearch": "https://github.com/wikimedia/mediawiki-extensions-WikibaseLexemeCirrusSearch.git",
+		"mwext-ArticlePlaceholder": "https://github.com/wikimedia/mediawiki-extensions-ArticlePlaceholder.git",
+		"mwext-PropertySuggester": "https://github.com/wikimedia/mediawiki-extensions-PropertySuggester.git",
+		"gerrit-termbox": "https://github.com/wikimedia/wikibase-termbox.git",
+		"gh-WikibaseDataModel": "https://github.com/wmde/WikibaseDataModel.git",
+		"gh-WikibaseDataModelServices": "https://github.com/wmde/WikibaseDataModelServices.git",
+		"gh-WikibaseDataModelSerialization": "https://github.com/wmde/WikibaseDataModelSerialization.git",
+		"gh-WikibaseInternalSerialization": "https://github.com/wmde/WikibaseInternalSerialization.git",
+		"gh-query-builder": "https://github.com/wmde/query-builder.git",
+		"gh-php-vuejs-templating": "https://github.com/wmde/php-vuejs-templating.git",
+		"gh-wikibase-release-prototype": "https://github.com/wmde/wikibase-release-prototype.git",
+		"gh-wikibase-docker": "https://github.com/wmde/wikibase-docker.git",
+		"gh-wikit": "https://github.com/wmde/wikit.git",
+		"gh-wikidata-wikibase-architecture": "https://github.com/wmde/wikidata-wikibase-architecture"
+	},
 	"team": [
 		"addshorewiki@gmail.com",
 		"adamshorland@gmail.com",
-		"itamar.givon@wikimedia.de",
-		"perside.rosalie@wikimedia.de",
+		"addshore@users.noreply.github.com",
+
+		"bereket.teshome@wikimedia.de",
+
+		"dan.shick@wikimedia.de",
+
 		"guergana.tzatchkova@wikimedia.de",
+
+		"hoo@online.de",
+
+		"itamar.givon.dev@gmail.com",
+		"itamar.givon@wikimedia.de",
+
 		"jakob.warkotsch@wikimedia.de",
-		"noa.rave@wikimedia.de",
-		"lucas.werkmeister@wikimedia.de",
-		"thomas.arrow_ext@wikimedia.de",
-		"tobias.andersson@wikimedia.de",
-		"silvan.heintze@wikimedia.de",
-		"michael.grosse@wikimedia.de",
-		"tonina.zhelyazkova@wikimedia.de",
+		"j.warkotsch@gmail.com",
+
 		"ladsgroup@gmail.com",
 		"Ladsgroup@gmail.com",
-		"j.warkotsch@gmail.com",
-		"hoo@online.de"
+
+		"lucas.werkmeister@wikimedia.de",
+
+		"mic.grosse@googlemail.com",
+		"michael.grosse@wikimedia.de",
+
+		"noa.rave@wikimedia.de",
+
+		"perside.rosalie@wikimedia.de",
+
+		"sarai.sanchez@wikimedia.de",
+
+		"silvan.heintze@wikimedia.de",
+
+		"thomas.arrow_ext@wikimedia.de",
+		"tarrow@users.noreply.github.com",
+		"bomarrow1@gmail.com",
+		"thomasarrow@gmail.com",
+
+		"tobias.andersson@wikimedia.de",
+
+		"tonina.zhelyazkova@wikimedia.de"
 	],
 	"components": {
 		"Repo": [
 			"mwext-Wikibase/repo/"
+		],
+		"RepoFederatedProperties": [
+			"mwext-Wikibase/repo/includes/FederatedProperties",
+			"mwext-Wikibase/build/federated-properties"
 		],
 		"RepoView": [
 			"mwext-Wikibase/view/"
@@ -52,10 +89,48 @@
 			"mwext-Wikibase/client/data-bridge/"
 		],
 		"Lexeme": [
-			"mwext-WikibaseLexeme/"
+			"mwext-WikibaseLexeme/",
+			"gh-php-vuejs-templating/"
+		],
+		"QualityConstraints": [
+			"mwext-WikibaseQualityConstraints/"
+		],
+		"ArticlePlaceholder": [
+			"mwext-ArticlePlaceholder/"
+		],
+		"PropertySuggester": [
+			"mwext-PropertySuggester/"
+		],
+		"Manifest": [
+			"mwext-WikibaseManifest/"
+		],
+		"TermBox": [
+			"gerrit-termbox/"
 		],
 		"QueryBuilder": [
 			"gh-query-builder/"
+		],
+		"DataModelLibs": [
+			"gh-WikibaseDataModel",
+			"gh-WikibaseInternal"
+		],
+		"DesignSystem": [
+			"gh-wikit/"
+		],
+		"Releasing": [
+			"gh-wikibase-docker/",
+			"gh-wikibase-release-prototype/"
+		],
+		"Docs": [
+			"gh-wikidata-wikibase-architecture/",
+			"mwext-Wikibase/docs/"
+		],
+		"MediaInfo": [
+			"mwext-WikibaseMediaInfo/"
+		],
+		"Search": [
+			"mwext-WikibaseCirrusSearch/",
+			"mwext-WikibaseLexemeCirrusSearch/"
 		]
 	}
 }

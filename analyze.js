@@ -37,11 +37,11 @@ async function main() {
 
     // Collect the input for each repo...
     var childProcesses = [];
-    // TODO run the below again...
-    input.code.forEach(function(codeDetails) {
-        // TODO don't hardcode master
-        childProcesses.push(spawnWithOut(spawn("./analyze.sh", [codeDetails.name, codeDetails.git, "master"])));
-    });
+    // TODO toggle running this step with an option
+    for (let projectName in input.code) {
+        let projectRepo = input.code[projectName]
+        childProcesses.push(spawnWithOut(spawn("./analyze.sh", [projectName, projectRepo, "master"])));
+    }
 
     // Wait for them to finish running
     let waitingForProcessing = true;
@@ -68,7 +68,7 @@ async function main() {
     }
 
     // Join all the counts together
-    // TODO re enable this
+    // TODO toggle running this step with an option
     let spawned = spawnWithOut(spawn("./join.sh", ["master"]))
     while (spawned.exitCode == null) {
         await new Promise(resolve => setTimeout(resolve, 250))
@@ -90,6 +90,7 @@ async function main() {
     let line;
     let lineNumber = 0;
     let foundEmails = [];
+    let ungroupedFiles = [];
     while (line = liner.next()) {
         let lineParts = line.toString('ascii').split(" ");
         let path = lineParts[0]
@@ -97,10 +98,6 @@ async function main() {
         let lines = parseInt(lineParts[2])
         let inTeam = (teamEmails.indexOf(email) > -1)
         let component = 'ungrouped'
-
-        if(!foundEmails.includes(email)) {
-            foundEmails.push(email)
-        }
 
         componentLoop: for (let componentName in projectComponents) {
             for(let i = 0; i < projectComponents[componentName].length; i++){
@@ -112,7 +109,12 @@ async function main() {
             }
         }
 
-        // TODO output un-grouped files to a useful list?
+        if(!foundEmails.includes(email)) {
+            foundEmails.push(email)
+        }
+        if(component == 'ungrouped' && !ungroupedFiles.includes(path)) {
+            ungroupedFiles.push(path)
+        }
 
         if(!compiledData.hasOwnProperty(component)){
             compiledData[component] = {
@@ -134,6 +136,7 @@ async function main() {
 
     // TODO don't hardcode master
     fs.writeFileSync("data/master.allemails",foundEmails.join("\n"))
+    fs.writeFileSync("data/master.ungrouped",ungroupedFiles.join("\n"))
     fs.writeFileSync("data/master.data",JSON.stringify(compiledData,null,'\t'))
 
     console.log(compiledData)
