@@ -10,7 +10,7 @@ const tablemark = require('tablemark')
  */
 
 var optionator = require('optionator')({
-    prepend: 'Usage: ganalyze [options] input.json',
+    prepend: 'Usage: ganalyze [options] input.json <date>',
     append: 'Version 0.0.0',
     options: [{
         option: 'help',
@@ -21,7 +21,7 @@ var optionator = require('optionator')({
         option: 'noanalyze',
         type: 'Boolean',
         description: 'Don\'t re-analyze, use existing data',
-        example: 'ganalyze --noanalyze input.json'
+        example: 'ganalyze --noanalyze input.json <date>'
     }]
 });
 
@@ -33,12 +33,18 @@ if (options.help) {
 
 // Get user input
 var inputFile = options._[0];
-var inputRef = options._[1];
+var inputDate = options._[1];
 var skipAnalyze = options.noanalyze;
-console.log("Running for input file " + inputFile);
 var input = JSON.parse(fs.readFileSync(inputFile,{encoding:'utf8', flag:'r'}));
+// Fallback to today if no date is defined
+if(inputDate == undefined) {
+    let currentDate = new Date();
+    inputDate=currentDate.getFullYear() + '-' + (currentDate.getMonth() + 1) + '-' + currentDate.getDate()
+}
 
 // Run the thing
+
+console.log("Running for input file " + inputFile + " and date " + inputDate);
 main();
 
 function spawnWithOut(childProcess) {
@@ -63,7 +69,7 @@ async function main() {
     if(!skipAnalyze) {
         for (let projectName in input.code) {
             let projectRepo = input.code[projectName]
-            childProcesses.push(spawnWithOut(spawn("./analyze.sh", [projectName, projectRepo, "master"])));
+            childProcesses.push(spawnWithOut(spawn("./analyze.sh", [projectName, projectRepo, inputDate])));
         }
     }
 
@@ -93,15 +99,14 @@ async function main() {
 
     // Join all the counts together
     if(!skipAnalyze) {
-        let spawned = spawnWithOut(spawn("./join.sh", ["master"]))
+        let spawned = spawnWithOut(spawn("./join.sh", [inputDate]))
         while (spawned.exitCode == null) {
             await new Promise(resolve => setTimeout(resolve, 250))
         }
     }
 
     // Generate data for each component
-    // TODO don't hardcode master
-    let allCountsData = 'data/master.allcounts'
+    let allCountsData = 'data/' + inputDate + '.allcounts'
     let teamEmails = input.team;
     let projectComponents = input.components;
     let compiledData = {
@@ -110,6 +115,11 @@ async function main() {
             false:0,
             true:0
         }
+    }
+
+    if(!fs.existsSync(allCountsData)) {
+        console.log(allCountsData + " does not yet exist!")
+        exit();
     }
 
     const liner = new lineByLine(allCountsData);
@@ -158,15 +168,15 @@ async function main() {
     // Add %s to compiledData
     componentLoop: for (let componentName in compiledData) {
         let componentsData = compiledData[componentName]
-        //compiledData[componentName]["name"] = componentName
         compiledData[componentName]["team%"] = componentsData[true] / ( componentsData[true] + componentsData[false] ) * 100
     }
 
-    // TODO don't hardcode master
-    fs.writeFileSync("data/master.allemails",foundEmails.join("\n"))
-    fs.writeFileSync("data/master.ungrouped",ungroupedFiles.join("\n"))
-    fs.writeFileSync("data/master.data",JSON.stringify(compiledData,null,'\t'))
+    // Final output files
+    fs.writeFileSync("data/" + inputDate + ".allemails",foundEmails.join("\n"))
+    fs.writeFileSync("data/" + inputDate + ".ungrouped",ungroupedFiles.join("\n"))
+    fs.writeFileSync("data/" + inputDate + ".data",JSON.stringify(compiledData,null,'\t'))
 
+    // Useful user output
     console.log(tablemark(Object.values(compiledData)))
 
 }

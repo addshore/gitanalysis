@@ -10,15 +10,15 @@ function cloneOrFetch() {
 }
 
 # Take the raw git blame outputs (that are stored in files)
-# And add everythign up, creating a $ref.allcounts file for the repo
+# And add everythign up, creating a $targetDate.allcounts file for the repo
 function calculateCounts() {
     name=$1
-    ref=$2
+    targetDate=$2
 
-    FILES=./data/$name/$ref.allfiles
+    FILES=./data/$name/$targetDate.allfiles
 
     # Create a fresh file for the final output counts
-    OUTPUT_COUNTS=./data/$name/$ref.allcounts
+    OUTPUT_COUNTS=./data/$name/$targetDate.allcounts
     touch $OUTPUT_COUNTS
     rm $OUTPUT_COUNTS
     touch $OUTPUT_COUNTS
@@ -26,7 +26,7 @@ function calculateCounts() {
     REGEX="^([[:alnum:]]+)[[:space:]]+\(<([^@]+\@[^>]+)>[[:space:]]+([0-9]{4}\-[0-9]{2}\-[0-9]{2} [0-9]{2}\:[0-9]{2}\:[0-9]{2} \+[0-9]{4})[[:space:]]+([0-9]+)\)(.*)$"
 
     while read FILE_PATH; do
-        OUTPUT_BLAME=./data/$name/$FILE_PATH.$ref.gitblame
+        OUTPUT_BLAME="./data/$name/$FILE_PATH.$targetDate.gitblame"
         declare -A AUTHORS=()
         # EXAMPLE: fca2a09a0d2 (<addshorewiki@gmail.com> 2020-01-10 10:32:46 +0000  1) <?php
         # 1 hash, 2 email, 3 date time, 4 line number, 5 line

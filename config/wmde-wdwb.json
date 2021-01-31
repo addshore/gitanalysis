@@ -1,6 +1,12 @@
 {
 	"code": {
 		"mwext-Wikibase": "https://github.com/wikimedia/Wikibase.git",
+		"mwext-Wikibase-sub-view-lib-value-view": "https://gerrit.wikimedia.org/r/data-values/value-view",
+		"mwext-Wikibase-sub-view-lib-wikibase-serialization": "https://phabricator.wikimedia.org/source/wikibase-serialization.git",
+		"mwext-Wikibase-sub-view-lib-datavalues-javascript": "https://phabricator.wikimedia.org/source/datavalues-javascript.git",
+		"mwext-Wikibase-sub-view-lib-wikibase-data-model": "https://phabricator.wikimedia.org/source/wikibase-data-model.git",
+		"mwext-Wikibase-sub-view-lib-wikibase-termbox": "https://gerrit.wikimedia.org/r/wikibase/termbox",
+		"mwext-Wikibase-sub-lib-wikibase-api": "https://gerrit.wikimedia.org/r/wikibase/javascript-api",
 		"mwext-WikibaseLexeme": "https://github.com/wikimedia/mediawiki-extensions-WikibaseLexeme.git",
 		"mwext-WikibaseQualityConstraints": "https://github.com/wikimedia/mediawiki-extensions-WikibaseQualityConstraints.git",
 		"mwext-WikibaseManifest": "https://github.com/wikimedia/mediawiki-extensions-WikibaseManifest.git",
@@ -9,7 +15,6 @@
 		"mwext-WikibaseLexemeCirrusSearch": "https://github.com/wikimedia/mediawiki-extensions-WikibaseLexemeCirrusSearch.git",
 		"mwext-ArticlePlaceholder": "https://github.com/wikimedia/mediawiki-extensions-ArticlePlaceholder.git",
 		"mwext-PropertySuggester": "https://github.com/wikimedia/mediawiki-extensions-PropertySuggester.git",
-		"gerrit-termbox": "https://github.com/wikimedia/wikibase-termbox.git",
 		"gh-WikibaseDataModel": "https://github.com/wmde/WikibaseDataModel.git",
 		"gh-WikibaseDataModelServices": "https://github.com/wmde/WikibaseDataModelServices.git",
 		"gh-WikibaseDataModelSerialization": "https://github.com/wmde/WikibaseDataModelSerialization.git",
@@ -78,13 +83,15 @@
 			"mwext-Wikibase/build/federated-properties"
 		],
 		"RepoView": [
-			"mwext-Wikibase/view/"
+			"mwext-Wikibase/view/",
+			"mwext-Wikibase-sub-view-"
 		],
 		"Client": [
 			"mwext-Wikibase/client/"
 		],
 		"Lib": [
-			"mwext-Wikibase/lib/"
+			"mwext-Wikibase/lib/",
+			"mwext-Wikibase-sub-lib-"
 		],
 		"DataAccess": [
 			"mwext-Wikibase/data-access/"
@@ -109,7 +116,7 @@
 			"mwext-WikibaseManifest/"
 		],
 		"TermBox": [
-			"gerrit-termbox/"
+			"mwext-Wikibase-sub-view-lib-wikibase-termbox/"
 		],
 		"QueryBuilder": [
 			"gh-query-builder/"
