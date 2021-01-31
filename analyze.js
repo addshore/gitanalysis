@@ -176,7 +176,9 @@ async function main() {
     fs.writeFileSync("data/" + inputDate + ".ungrouped",ungroupedFiles.join("\n"))
     fs.writeFileSync("data/" + inputDate + ".data",JSON.stringify(compiledData,null,'\t'))
 
-    // Useful user output
-    console.log(tablemark(Object.values(compiledData)))
+    // Markdown tableify
+    let compiledMarkdown = tablemark(Object.values(compiledData))
+    fs.writeFileSync("data/" + inputDate + ".data.md",compiledMarkdown)
+    console.log(compiledMarkdown)
 
 }
