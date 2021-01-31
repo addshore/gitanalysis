@@ -129,9 +129,9 @@ async function main() {
     let ungroupedFiles = [];
     while (line = liner.next()) {
         let lineParts = line.toString('ascii').split(" ");
-        let path = lineParts[0]
-        let email = lineParts[1]
-        let lines = parseInt(lineParts[2])
+        let lines = parseInt(lineParts.pop())
+        let email = lineParts.pop()
+        let path = lineParts.join(' ')
         let inTeam = (teamEmails.indexOf(email) > -1)
         let component = 'ungrouped'
 
