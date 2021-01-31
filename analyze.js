@@ -9,10 +9,32 @@ const tablemark = require('tablemark')
  * node main.js input.json master
  */
 
+var optionator = require('optionator')({
+    prepend: 'Usage: ganalyze [options] input.json',
+    append: 'Version 0.0.0',
+    options: [{
+        option: 'help',
+        alias: 'h',
+        type: 'Boolean',
+        description: 'displays help'
+    }, {
+        option: 'noanalyze',
+        type: 'Boolean',
+        description: 'Don\'t re-analyze, use existing data',
+        example: 'ganalyze --noanalyze input.json'
+    }]
+});
+
+var options = optionator.parseArgv(process.argv);
+if (options.help) {
+    console.log(optionator.generateHelp());
+    exit();
+}
+
 // Get user input
-var myArgs = process.argv.slice(2);
-var inputFile = myArgs[0];
-var inputRef = myArgs[1];
+var inputFile = options._[0];
+var inputRef = options._[1];
+var skipAnalyze = options.noanalyze;
 console.log("Running for input file " + inputFile);
 var input = JSON.parse(fs.readFileSync(inputFile,{encoding:'utf8', flag:'r'}));
 
@@ -38,10 +60,11 @@ async function main() {
 
     // Collect the input for each repo...
     var childProcesses = [];
-    // TODO toggle running this step with an option
-    for (let projectName in input.code) {
-        let projectRepo = input.code[projectName]
-        childProcesses.push(spawnWithOut(spawn("./analyze.sh", [projectName, projectRepo, "master"])));
+    if(!skipAnalyze) {
+        for (let projectName in input.code) {
+            let projectRepo = input.code[projectName]
+            childProcesses.push(spawnWithOut(spawn("./analyze.sh", [projectName, projectRepo, "master"])));
+        }
     }
 
     // Wait for them to finish running
@@ -69,10 +92,11 @@ async function main() {
     }
 
     // Join all the counts together
-    // TODO toggle running this step with an option
-    let spawned = spawnWithOut(spawn("./join.sh", ["master"]))
-    while (spawned.exitCode == null) {
-        await new Promise(resolve => setTimeout(resolve, 250))
+    if(!skipAnalyze) {
+        let spawned = spawnWithOut(spawn("./join.sh", ["master"]))
+        while (spawned.exitCode == null) {
+            await new Promise(resolve => setTimeout(resolve, 250))
+        }
     }
 
     // Generate data for each component
