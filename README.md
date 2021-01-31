@@ -6,6 +6,9 @@ Work In Progress: Tooling to see what % of a set of codebases was written by a t
 
 **TODOs:**
 
+- Script to run the stuff over multiple years? and compile a table result?
+- Auto plotting data?
+- Define the team changes through time
 - Think about allowing the definition of multiple teams?
 - Stop files from being allowed in multiple components? (maybe?) Maybe with regex includes and excludes?
 - Tests
