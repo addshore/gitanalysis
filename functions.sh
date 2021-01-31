@@ -26,7 +26,6 @@ function calculateCounts() {
     REGEX="^([[:alnum:]]+)[[:space:]]+\(<([^@]+\@[^>]+)>[[:space:]]+([0-9]{4}\-[0-9]{2}\-[0-9]{2} [0-9]{2}\:[0-9]{2}\:[0-9]{2} \+[0-9]{4})[[:space:]]+([0-9]+)\)(.*)$"
 
     while read FILE_PATH; do
-        OUTPUT_BLAME="./data/$name/$FILE_PATH.$targetDate.gitblame"
         declare -A AUTHORS=()
         # EXAMPLE: fca2a09a0d2 (<addshorewiki@gmail.com> 2020-01-10 10:32:46 +0000  1) <?php
         # 1 hash, 2 email, 3 date time, 4 line number, 5 line
@@ -34,7 +33,7 @@ function calculateCounts() {
             if [[ "$BLAME_LINE" =~ $REGEX ]]; then
                 ((AUTHORS["${BASH_REMATCH[2]}"]++))
             fi
-        done < $OUTPUT_BLAME
+        done < "./data/${name}/${FILE_PATH}.${targetDate}.gitblame"
         for i in "${!AUTHORS[@]}"
         do
             EMAIL=$i

@@ -45,16 +45,15 @@ while read FILE_PATH; do
 done < $FILES
 
 FILE_COUNT=$(cat $FILES | wc -l)
-
 # Save blame for all of the files
 echo "$PROJECT_NAME: Generating blames for $FILE_COUNT files"
 while read FILE_PATH; do
-	OUTPUT_BLAME=./data/$PROJECT_NAME/$FILE_PATH.$TARGET_DATE.gitblame
-	OUTPUT_DIR=$(dirname $OUTPUT_BLAME)
+	OUTPUT_BLAME=./data/${PROJECT_NAME}/${FILE_PATH}.${TARGET_DATE}.gitblame
+	OUTPUT_DIR=$(dirname "$OUTPUT_BLAME")
 	mkdir -p $OUTPUT_DIR
 	# -c forces the file name to NOT be included https://stackoverflow.com/a/33603112/4746236
 	# -w ignore whitespace changes
-	git --git-dir ./data/$PROJECT_NAME/.git blame --show-email -c -w $COMMIT $FILE_PATH > $OUTPUT_BLAME
+	git --git-dir ./data/$PROJECT_NAME/.git blame --show-email -c -w $COMMIT ${FILE_PATH} > "$OUTPUT_BLAME"
 done < $FILES
 
 # Calculate the counts
