@@ -2,7 +2,7 @@
 
 Work In Progress: Tooling to see what % of a set of codebases was written by a team.
 
-![](https://i.imgur.com/mXBexVJ.png)
+![](https://i.imgur.com/x7P1HWv.png)
 
 **TODOs:**
 
@@ -28,7 +28,7 @@ Create a JSON file to input.
 Then run the script:
 
 ```sh
-node analyze.js config/wmde-wdwb.json
+node analyze.js config/wmde-wdwb.json 2021-01-01
 ```
 
 And wait for the processing to happen...
