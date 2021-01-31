@@ -23,6 +23,7 @@ FILES=./data/$PROJECT_NAME/$TARGET_DATE.allfiles
 
 if [ -z "$COMMIT" ]; then
     echo "No commit found for date"
+	exit
 fi
 
 # List the files
