@@ -53,7 +53,7 @@ while read FILE_PATH; do
 	mkdir -p $OUTPUT_DIR
 	# -c forces the file name to NOT be included https://stackoverflow.com/a/33603112/4746236
 	# -w ignore whitespace changes
-	git --git-dir ./data/$PROJECT_NAME/.git blame --show-email -c -w $COMMIT ${FILE_PATH} > "$OUTPUT_BLAME"
+	git --git-dir ./data/$PROJECT_NAME/.git blame --show-email -c -w $COMMIT "${FILE_PATH}" > "$OUTPUT_BLAME"
 done < $FILES
 
 # Calculate the counts
