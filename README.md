@@ -13,6 +13,11 @@ Work In Progress: Tooling to see what % of a set of codebases was written by a t
 - Think about code review (need gerrit and or github api calls? D:)
 - Configurable global ignore regexes (currently hardcoded)
 
+## Requirements
+
+- nodejs 10+
+- bash, git, sed
+
 ## Usage
 
 Create a JSON file to input.
