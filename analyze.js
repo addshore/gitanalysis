@@ -155,8 +155,8 @@ async function main() {
         if(!compiledData.hasOwnProperty(component)){
             compiledData[component] = {
                 name : component,
-                false : parseInt(0),
-                true : parseInt(0)
+                true : parseInt(0),
+                false : parseInt(0)
             };
         }
         compiledData[component][inTeam] = compiledData[component][inTeam] + lines
@@ -168,8 +168,23 @@ async function main() {
     // Add %s to compiledData
     componentLoop: for (let componentName in compiledData) {
         let componentsData = compiledData[componentName]
-        compiledData[componentName]["team%"] = componentsData[true] / ( componentsData[true] + componentsData[false] ) * 100
+        compiledData[componentName]["team%"] = ( componentsData[true] / ( componentsData[true] + componentsData[false] ) * 100 ).toFixed(1)
     }
+
+    compiledData = Object.values(compiledData)
+
+    // Sort some output..
+    foundEmails.sort()
+    ungroupedFiles.sort()
+    compiledData.sort(function(a,b){
+        if(parseFloat(a["team%"]) < parseFloat(b["team%"])) {
+            return 1
+        }
+        if(parseFloat(a["team%"]) > parseFloat(b["team%"])) {
+            return -1
+        }
+        return 0
+    })
 
     // Final output files
     fs.writeFileSync("data/" + inputDate + ".allemails",foundEmails.join("\n"))
