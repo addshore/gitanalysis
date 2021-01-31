@@ -11,6 +11,7 @@
   },
   "author": "",
   "dependencies": {
-    "n-readlines": "^1.0.1"
+    "n-readlines": "^1.0.1",
+    "tablemark": "^2.0.0"
   }
 }

@@ -2,6 +2,7 @@ const fs = require('fs');
 const lineByLine = require('n-readlines');
 const spawn = require("child_process").spawn;
 const { exit } = require('process');
+const tablemark = require('tablemark')
 
 /**
  * Example usage:
@@ -81,6 +82,7 @@ async function main() {
     let projectComponents = input.components;
     let compiledData = {
         total: {
+            name:"Total",
             false:0,
             true:0
         }
@@ -118,6 +120,7 @@ async function main() {
 
         if(!compiledData.hasOwnProperty(component)){
             compiledData[component] = {
+                name : component,
                 false : parseInt(0),
                 true : parseInt(0)
             };
@@ -131,6 +134,7 @@ async function main() {
     // Add %s to compiledData
     componentLoop: for (let componentName in compiledData) {
         let componentsData = compiledData[componentName]
+        //compiledData[componentName]["name"] = componentName
         compiledData[componentName]["team%"] = componentsData[true] / ( componentsData[true] + componentsData[false] ) * 100
     }
 
@@ -139,6 +143,6 @@ async function main() {
     fs.writeFileSync("data/master.ungrouped",ungroupedFiles.join("\n"))
     fs.writeFileSync("data/master.data",JSON.stringify(compiledData,null,'\t'))
 
-    console.log(compiledData)
+    console.log(tablemark(Object.values(compiledData)))
 
 }
