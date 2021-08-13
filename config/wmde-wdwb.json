@@ -14,17 +14,26 @@
 		"mwext-WikibaseCirrusSearch": "https://github.com/wikimedia/mediawiki-extensions-WikibaseCirrusSearch.git",
 		"mwext-WikibaseLexemeCirrusSearch": "https://github.com/wikimedia/mediawiki-extensions-WikibaseLexemeCirrusSearch.git",
 		"mwext-ArticlePlaceholder": "https://github.com/wikimedia/mediawiki-extensions-ArticlePlaceholder.git",
+		"mwext-Cognate": "https://github.com/wikimedia/mediawiki-extensions-Cognate.git",
+		"mwext-InterwikiSorting": "https://github.com/wikimedia/mediawiki-extensions-InterwikiSorting.git",
+		"mwext-WikidataOrg": "https://github.com/wikimedia/mediawiki-extensions-Wikidata.org.git",
+		"mwext-WikibaseReconcileEdit": "https://github.com/wmde/WikibaseReconcileEdit.git",
 		"mwext-PropertySuggester": "https://github.com/wikimedia/mediawiki-extensions-PropertySuggester.git",
+		"gerrit-wb-property-suggester-scripts": "https://gerrit.wikimedia.org/r/wikibase/property-suggester-scripts.git",
+		"gerrit-purtle": "https://gerrit.wikimedia.org/r/purtle.git",
 		"gh-WikibaseDataModel": "https://github.com/wmde/WikibaseDataModel.git",
 		"gh-WikibaseDataModelServices": "https://github.com/wmde/WikibaseDataModelServices.git",
 		"gh-WikibaseDataModelSerialization": "https://github.com/wmde/WikibaseDataModelSerialization.git",
 		"gh-WikibaseInternalSerialization": "https://github.com/wmde/WikibaseInternalSerialization.git",
-		"gh-query-builder": "https://github.com/wmde/query-builder.git",
+		"gh-query-gui": "https://gerrit.wikimedia.org/r/wikidata/query/gui",
+		"gh-query-builder": "https://gerrit.wikimedia.org/r/wikidata/query/builder",
 		"gh-php-vuejs-templating": "https://github.com/wmde/php-vuejs-templating.git",
-		"gh-wikibase-release-prototype": "https://github.com/wmde/wikibase-release-prototype.git",
+		"gh-wikibase-release-pipeline": "https://github.com/wmde/wikibase-release-pipeline.git",
 		"gh-wikibase-docker": "https://github.com/wmde/wikibase-docker.git",
 		"gh-wikit": "https://github.com/wmde/wikit.git",
-		"gh-wikidata-wikibase-architecture": "https://github.com/wmde/wikidata-wikibase-architecture"
+		"gh-wikidata-mismatch-finder": "https://github.com/wmde/wikidata-mismatch-finder",
+		"gh-wikidata-wikibase-architecture": "https://github.com/wmde/wikidata-wikibase-architecture",
+		"gh-wikidata-wikibase-team": "https://github.com/wmde/wikidata-wikibase-team"
 	},
 	"team": [
 		"addshorewiki@gmail.com",
@@ -103,20 +112,36 @@
 			"mwext-WikibaseLexeme/",
 			"gh-php-vuejs-templating/"
 		],
+		"WikibaseReconcileEdit": [
+			"WikibaseReconcileEdit/"
+		],
 		"QualityConstraints": [
 			"mwext-WikibaseQualityConstraints/"
 		],
 		"ArticlePlaceholder": [
 			"mwext-ArticlePlaceholder/"
 		],
+		"Cognate": [
+			"mwext-Cognate/"
+		],
+		"InterwikiSorting": [
+			"mwext-InterwikiSorting/"
+		],
+		"WikidataOrg": [
+			"mwext-WikidataOrg/"
+		],
 		"PropertySuggester": [
-			"mwext-PropertySuggester/"
+			"mwext-PropertySuggester/",
+			"gerrit-wb-property-suggester-scripts/"
 		],
 		"Manifest": [
 			"mwext-WikibaseManifest/"
 		],
 		"TermBox": [
 			"mwext-Wikibase-sub-view-lib-wikibase-termbox/"
+		],
+		"QueryGui": [
+			"gh-query-gui/"
 		],
 		"QueryBuilder": [
 			"gh-query-builder/"
@@ -128,16 +153,23 @@
 		"DesignSystem": [
 			"gh-wikit/"
 		],
+		"Purtle": [
+			"gerrit-purtle/"
+		],
 		"Releasing": [
 			"gh-wikibase-docker/",
-			"gh-wikibase-release-prototype/"
+			"gh-wikibase-release-pipeline/"
 		],
 		"Docs": [
 			"gh-wikidata-wikibase-architecture/",
+			"gh-wikidata-wikibase-team/",
 			"mwext-Wikibase/docs/"
 		],
 		"MediaInfo": [
 			"mwext-WikibaseMediaInfo/"
+		],
+		"MissmatchFinder": [
+			"gh-wikidata-mismatch-finder/"
 		],
 		"Search": [
 			"mwext-WikibaseCirrusSearch/",
