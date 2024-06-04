@@ -39,7 +39,10 @@ var config = yaml.load(fs.readFileSync(configFile, 'utf8'));
 
 // Run the thing
 console.log("Running with config file " + configFile );
-mainmain();
+if (!skipAnalyze) {
+    mainmainProcess();
+}
+mainmainOutput();
 
 function spawnWithOut(childProcess) {
     childProcess.stdout.on('data', function (data) {
@@ -49,7 +52,9 @@ function spawnWithOut(childProcess) {
         process.stdout.write(data.toString());
     });
     childProcess.on('exit', function (code) {
-        console.log('child process exited with code ' + code.toString());
+        if (code != 0) {
+            console.log('child process exited with code ' + code.toString());
+        }
     });
     return childProcess
 }
@@ -59,8 +64,16 @@ function normalizeDate(date) {
     return dateObj.getFullYear() + '-' + (dateObj.getMonth() + 1) + '-' + dateObj.getDate()
 }
 
-// The mainmain function...
-async function mainmain() {
+function normalizeDateForOut(date) {
+    let dateObj = new Date(date)
+    let year = dateObj.getFullYear()
+    let month = (dateObj.getMonth() + 1).toString().padStart(2, '0')
+    let day = dateObj.getDate().toString().padStart(2, '0')
+    return year + '-' + month + '-' + day
+}
+
+// The mainmain processing function...
+async function mainmainProcess() {
     // Firstly collect all git repos from all dates in the config
     let allRepos = []
     for (let date in config) {
@@ -87,12 +100,15 @@ async function mainmain() {
     }
 
     // Run the main function for each date requested
-    for (let date in config) {
-        let normalDate = normalizeDate(date)
-        console.log("Running on date " + normalDate );
-        await main(normalDate, config[date]);
-    }
+    await Promise.all(Object.entries(config).map(async ([date, input]) => {
+        let normalDate = normalizeDate(date);
+        console.log("Running for date " + normalDate);
+        await main(normalDate, input);
+        console.log("Done running for date " + normalDate);
+    }));
+}
 
+async function mainmainOutput() {
     // FINAL FINAL processing
     console.log("Final processing")
     let allEmails = []
@@ -120,7 +136,7 @@ async function mainmain() {
                 }
             }
             // Add the data to the row
-            allData[componentName][normalDate] = teamPercent
+            allData[componentName][normalizeDateForOut(date)] = teamPercent
         }
     }
 

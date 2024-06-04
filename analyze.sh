@@ -24,12 +24,12 @@ mkdir -p $(dirname "$FILES")
 touch "$FILES"
 
 if [ -z "$COMMIT" ]; then
-    echo "No commit found for date"
+    echo "$TARGET_DATE No commit found for date"
 	exit
 fi
 
 # List the files
-echo "$PROJECT_NAME: Collecting file list"
+echo "$TARGET_DATE $PROJECT_NAME: Collecting file list"
 # TODO don't hardcode the global ignore list...
 git --git-dir ./data/$PROJECT_NAME/.git ls-tree -r --name-only $COMMIT \
 	| grep -v ".tests.js$"\
@@ -38,6 +38,7 @@ git --git-dir ./data/$PROJECT_NAME/.git ls-tree -r --name-only $COMMIT \
 	| grep -v "i18n/"\
 	| grep -v ".phan/"\
 	| grep -v ".github/"\
+	| grep -v "repo/rest-api/src/RouteHandlers/openapi.json"\
 	> $FILES
 # Remove folders from the list
 while read FILE_PATH; do
@@ -49,7 +50,7 @@ done < $FILES
 
 FILE_COUNT=$(cat $FILES | wc -l)
 # Save blame for all of the files
-echo "$PROJECT_NAME: Generating blames for $FILE_COUNT files"
+echo "$TARGET_DATE $PROJECT_NAME: Generating blames for $FILE_COUNT files"
 while read FILE_PATH; do
 	OUTPUT_BLAME=./data/${PROJECT_NAME}/${TARGET_DATE}/${FILE_PATH}.gitblame
 	OUTPUT_DIR=$(dirname "$OUTPUT_BLAME")
@@ -60,7 +61,7 @@ while read FILE_PATH; do
 done < $FILES
 
 # Calculate the counts
-echo "$PROJECT_NAME: Collecting results $FILE_COUNT"
+echo "$TARGET_DATE $PROJECT_NAME: Collecting results $FILE_COUNT"
 calculateCounts $PROJECT_NAME $TARGET_DATE
 
-echo "$PROJECT_NAME: Done!"
+echo "$TARGET_DATE $PROJECT_NAME: Done!"
