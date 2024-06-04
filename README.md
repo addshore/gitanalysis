@@ -23,12 +23,12 @@ Work In Progress: Tooling to see what % of a set of codebases was written by a t
 
 ## Usage
 
-Create a JSON file to input.
+Create a YAML file to input.
 
 Then run the script:
 
 ```sh
-node analyze.js config/wmde-wdwb.json 2021-01-01
+node analyze.js config/wmde-wdwb.yaml 2021-01-01
 ```
 
 And wait for the processing to happen...

@@ -3,14 +3,15 @@ const lineByLine = require('n-readlines');
 const spawn = require("child_process").spawn;
 const { exit } = require('process');
 const tablemark = require('tablemark')
+const yaml = require('js-yaml');
 
 /**
  * Example usage:
- * node main.js input.json master
+ * node main.js input.yaml master
  */
 
 var optionator = require('optionator')({
-    prepend: 'Usage: ganalyze [options] input.json <date>',
+    prepend: 'Usage: ganalyze [options] input.yaml <date>',
     append: 'Version 0.0.0',
     options: [{
         option: 'help',
@@ -21,7 +22,7 @@ var optionator = require('optionator')({
         option: 'noanalyze',
         type: 'Boolean',
         description: 'Don\'t re-analyze, use existing data',
-        example: 'ganalyze --noanalyze input.json <date>'
+        example: 'ganalyze --noanalyze input.yaml <date>'
     }]
 });
 
@@ -35,7 +36,7 @@ if (options.help) {
 var inputFile = options._[0];
 var inputDate = options._[1];
 var skipAnalyze = options.noanalyze;
-var input = JSON.parse(fs.readFileSync(inputFile,{encoding:'utf8', flag:'r'}));
+var input = yaml.load(fs.readFileSync(inputFile, 'utf8'));
 // Fallback to today if no date is defined
 if(inputDate == undefined) {
     let currentDate = new Date();
