@@ -1,206 +1,350 @@
 ---
 people:
+  abraham:
+    start:
+    end: 2021
+    emails:
+      - abraham.taherivand@wikimedia.de
   adee:
-    - 132473526+adeeri@users.noreply.github.com
+    start: 2023-05
+    end: # Current
+    emails:
+      - 132473526+adeeri@users.noreply.github.com
   addshore:
-    - addshorewiki@gmail.com
-    - adamshorland@gmail.com
-    - addshore@users.noreply.github.com
-    - adam.shorland@wikimedia.de
+    start: 2013
+    end: 2023-06
+    emails:
+      - addshorewiki@gmail.com
+      - adamshorland@gmail.com
+      - addshore@users.noreply.github.com
+      - adam.shorland@wikimedia.de
+  adrian:
+    start:
+    end: 2016-09  # Last Wikibase commit https://github.com/wikimedia/mediawiki-extensions-Wikibase/commits?author=adrianheine
+    emails:
+      - adrian.heine@wikimedia.de
+      - adrian.lang@wikimedia.de
+  alaa:
+    start:
+    end: 2022 # Pretty sure by then
+    emails:
+      - alaa.sarhan@wikimedia.de
+  aleksey:
+    start:
+    end: 2018-09
+    emails:
+      - aleksey.bekh-ivanov@wikimedia.de
+  andrew:
+    start:
+    end: # Current
+    emails:
+      - andrew.kostka@wikimedia.de
+  anja:
+    start: 2012
+    end: 2013-06
+    emails:
+      - anja.jentzsch@wikimedia.de
   arthur:
-    - arthur.taylor@wikimedia.de
+    start: 2023-12
+    end: # Current
+    emails:
+      - arthur.taylor@wikimedia.de
+  aude:
+    start: 2012
+    end: 2017-10  # Last Wikibase commit https://github.com/wikimedia/mediawiki-extensions-Wikibase/commits?author=filbertkm
+    emails:
+      - aude.wiki@gmail.com
+  audrey:
+    start: 2024-06
+    end: # Current
+    emails:
+  benestar:
+    start:
+    end: 2017-02 # Last Wikibase commit https://github.com/wikimedia/mediawiki-extensions-Wikibase/commits?author=Benestar
+    emails:
+      - benestar.wikimedia@gmail.com
+      - benestar.wikimedia@googlemail.com
   bereket:
-    - bereket.teshome@wikimedia.de
+    start:
+    end: 2021-08
+    emails:
+      - bereket.teshome@wikimedia.de
+  ckawohl:
+    start:
+    end: # Current
+    emails:
+      - 67744560+ckawohl-wmde@users.noreply.github.com
   cynthia:
-    - cynthia.makonyango@wikimedia.de
-  dan.shick:
-    - dan.shick@wikimedia.de
+    start: 2024-01
+    end: # Current
+    emails:
+      - cynthia.makonyango@wikimedia.de
+  dan.shick: 
+    start:
+    end: # Current
+    emails:
+      - dan.shick@wikimedia.de
   dat:
-    - dat.nguyen@wikimedia.de
+    start:
+    end: # Current
+    emails:
+      - dat.nguyen@wikimedia.de
+  daniel.kinzler:
+    start:
+    end: 2018-09 # Based on https://meta.wikimedia.org/w/index.php?title=User:DKinzler_(WMF)&oldid=18422316
+    emails:
+      - daniel.kinzler@wikimedia.de
+  daniel.werner:
+    start:
+    end: 2013-12 # Based on Gerrit https://gerrit.wikimedia.org/r/q/owner:daniel.a.r.werner@gmail.com+status:merged
+    emails:
+      - daniel.werner@wikimedia.de
+      - daniel.a.r.werner@gmail.com
   deniz:
-    - deniz.erdogan@wikimedia.de
+    start: 2021-08
+    end: # Current
+    emails:
+      - deniz.erdogan@wikimedia.de
+  denny:
+    start:
+    end: 2013-09
+    emails:
+      - denny.vrandecic@wikimedia.de
   dima:
-    - dima.koushha@wikimedia.de
+    start: 2024-01
+    end: # Current
+    emails:
+      - dima.koushha@wikimedia.de
   frederik:
-    - frederik.ring@wikimedia.de
+    start: 2023-01
+    end: # Current
+    emails:
+      - frederik.ring@wikimedia.de
+  frimelle:
+    start:
+    end: 2016-10
+    emails:
+      - lucie.kaffee@wikimedia.de
+      - lucie.aimee@googlemail.com
+  greta:
+    start:
+    end: 2019-06 # Based on gerrit https://gerrit.wikimedia.org/r/q/author:greta.doci@wikimedia.de
+    emails:
+      - greta.doci@wikimedia.de
   guergana:
-    - guergana.tzatchkova@wikimedia.de
+    start:
+    end: 2024-07
+    emails:
+      - guergana.tzatchkova@wikimedia.de
   hasan:
-    - hasan.akguen@wikimedia.de
+    start: 2022
+    end: # Current
+    emails:
+      - hasan.akguen@wikimedia.de
   hanna:
-    - 45200197+hanna-p-wmde@users.noreply.github.com
-    - hanna.petruschat@wikimedia.de
+    start:
+    end: 2022-12
+    emails:
+      - 45200197+hanna-p-wmde@users.noreply.github.com
+      - hanna.petruschat@wikimedia.de
+  henning:
+    start:
+    end: 2015-10 # Based on gerrit https://gerrit.wikimedia.org/r/q/author:henning.snater@wikimedia.de
+    emails:
+      - henning.snater@wikimedia.de
   hoo:
-    - hoo@online.de
-    - mail@mariushoch.de
-    - marius.hoch@wikimedia.de
+    start:
+    end: # Current
+    emails:
+      - hoo@online.de
+      - mail@mariushoch.de
+      - marius.hoch@wikimedia.de
   itamar:
-    - itamar.givon@wikimedia.de
-    - itamar.givon.dev@gmail.com
+    start:
+    end: # Current
+    emails:
+      - itamar.givon@wikimedia.de
+      - itamar.givon.dev@gmail.com
   jakob:
-    - jakob.warkotsch@wikimedia.de
-    - j.warkotsch@gmail.com
+    start:
+    end: # Current
+    emails:
+      - jakob.warkotsch@wikimedia.de
+      - j.warkotsch@gmail.com
   jan.dittrich:
-    - jan.dittrich@wikimedia.de
+    start:
+    end: 2022-08
+    emails:
+      - jan.dittrich@wikimedia.de
+  jeblad:
+    start:
+    end: 2013-06
+    emails:
+      - john.blad@wikimedia.de
+      - jeblad@gmail.com
+  jens:
+    start:
+    end:
+    emails:
+      - jens.ohlig@wikimedia.de
+  jeroen:
+    start:
+    end: 2019-06
+    emails:
+      - jeroendedauw@gmail.com
+  joely:
+    start: 2024-05
+    end: # Current
+    emails:
+      - 
+  jonas:
+    start:
+    end:
+    emails:
+      - jonas.kress@wikimedia.de
   ladsgroup:
-    - ladsgroup@gmail.com
-    - Ladsgroup@gmail.com
+    start:
+    end: 2021-08
+    emails:
+      - ladsgroup@gmail.com
+      - Ladsgroup@gmail.com
+  leszek:
+    start:
+    end: # Current
+    emails:
+      - leszek.manicki@wikimedia.de
   loren:
-    - loren.johnson@wikimedia.de
+    start: 2023-05
+    end: # Current
+    emails:
+      - loren.johnson@wikimedia.de
   lucas:
-    - lucas.werkmeister@wikimedia.de
+    start:
+    end: # Current
+    emails:
+      - lucas.werkmeister@wikimedia.de
+  matthias:
+    start:
+    end: 2020-02  # Based on last gerrit merge https://gerrit.wikimedia.org/r/q/author:matthias.geisler@wikimedia.de
+    emails:
+      - matthias.geisler@wikimedia.de
   michael:
-    - michael.grosse@wikimedia.de
-    - mic.grosse@googlemail.com
+    start:
+    end: 2024-03
+    emails:
+      - michael.grosse@wikimedia.de
+      - mic.grosse@googlemail.com
+  monica:
+    start:
+    end: # Current
+    emails:
+      - 50335264+darthmon@users.noreply.github.com
   muhammad:
-    - muhammad.jaziraly@extern.wikimedia.de
-    - muhammad.jaziraly@wikimedia.de
+    start: 2022-12
+    end: # Current
+    emails:
+      - muhammad.jaziraly@extern.wikimedia.de
+      - muhammad.jaziraly@wikimedia.de
   noa:
-    - noa.rave@wikimedia.de
+    start:
+    end: # Current
+    emails:
+      - noa.rave@wikimedia.de
   oliver:
-    - oliver.shotton@wikimedia.de
-    - outdooracorn@gmail.com
+    start: 2021-11
+    end: # Current
+    emails:
+      - oliver.shotton@wikimedia.de
+      - outdooracorn@gmail.com
+  pablo:
+    start:
+    end: 2020-11  # Last commit in Wikibase https://github.com/wikimedia/mediawiki-extensions-Wikibase/commits?author=wiese
+    emails:
+      - pablo.grass@wikimedia.de
   quetzlcoatlus:
-    - quetzlcoatlus@gmail.com
+    start:
+    end: # Current
+    emails:
+      - quetzlcoatlus@gmail.com
   raja:
-    - 67963068+raja-wmde@users.noreply.github.com
+    start:
+    end: # Current
+    emails:
+      - raja.amelung@wikimedia.de
+      - 67963068+raja-wmde@users.noreply.github.com
+  ricki:
+    start:
+    end: # Current
+    emails:
+      - 141253288+RickiJay-WMDE@users.noreply.github.com
   rosalie:
-    - perside.rosalie@wikimedia.de
+    start:
+    end: # Current
+    emails:
+      - perside.rosalie@wikimedia.de
   rti:
-    - rti@users.noreply.github.com
+    start: 2023-05
+    end: # Current
+    emails:
+      - rti@users.noreply.github.com
   sarai:
-    - sarai.sanchez@wikimedia.de
+    start:
+    end: # Current
+    emails:
+      - sarai.sanchez@wikimedia.de
   silvan:
-    - silvan.heintze@wikimedia.de
-    - 59574251+Silvan-WMDE@users.noreply.github.com
+    start:
+    end: # Current
+    emails:
+      - silvan.heintze@wikimedia.de
+      - 59574251+Silvan-WMDE@users.noreply.github.com
+  theimo:
+    start:
+    end: # Current
+    emails:
+      - thiemo.kreuz@wikimedia.de
+      - thiemo.maettig@wikimedia.de
+      - thiemowmde@users.noreply.github.com
+  tobi:
+    start:
+    end: # Current
+    emails:
+      - tobias.gritschacher@wikimedia.de
   tobias:
-    - tobias.andersson@wikimedia.de
-    - tobias.ande@gmail.com
+    start:
+    end: 2022
+    emails:
+      - tobias.andersson@wikimedia.de
+      - tobias.ande@gmail.com
   tom:
-    - thomas.arrow_ext@wikimedia.de
-    - tarrow@users.noreply.github.com
-    - bomarrow1@gmail.com
-    - thomasarrow@gmail.com
+    start:
+    end: # Current
+    emails:
+      - thomas.arrow_ext@wikimedia.de
+      - tarrow@users.noreply.github.com
+      - bomarrow1@gmail.com
+      - thomasarrow@gmail.com
   tonina:
-    - tonina.zhelyazkova@wikimedia.de
+    start:
+    end: 2021-08
+    emails:
+      - tonina.zhelyazkova@wikimedia.de
 snapshots:
-  2024-06-01:
-    - quetzlcoatlus
-    - dan.shick
-    - guergana
-    - hoo
-    - itamar
-    - tom
-    - silvan
-    - oliver
-    - muhammad
-    - jakob
-    - lucas
-    - noa
-    - rosalie
-    - sarai
-    - dat
-    - raja
-    - hasan
-    - deniz
-    - arthur
-    - dima
-    - cynthia
-    - loren
-    - rti
-    - adee
-    - frederik
-  2024-01-01: 
-    - quetzlcoatlus
-    - dan.shick
-    - guergana
-    - hoo
-    - itamar
-    - jakob
-    - lucas
-    - michael
-    - noa
-    - rosalie
-    - sarai
-    - silvan
-    - tom
-    - dat
-    - raja
-    - hasan
-    - oliver
-    - deniz
-    - muhammad
-    - arthur
-    - loren
-    - rti
-    - adee
-    - frederik
-  2023-01-01: 
-    - addshore
-    - quetzlcoatlus
-    - dan.shick
-    - guergana
-    - hoo
-    - itamar
-    - jakob
-    - lucas
-    - michael
-    - noa
-    - rosalie
-    - sarai
-    - silvan
-    - tom
-    - dat
-    - raja
-    - hasan
-    - oliver
-    - deniz
-    - muhammad
-  2022-01-01: 
-    - addshore
-    - quetzlcoatlus
-    - dan.shick
-    - guergana
-    - hoo
-    - itamar
-    - jakob
-    - jan.dittrich
-    - lucas
-    - michael
-    - noa
-    - rosalie
-    - sarai
-    - silvan
-    - tom
-    - tobias
-    - dat
-    - raja
-    - hanna
-    - oliver
-    - deniz
-  2021-01-01: 
-    - addshore
-    - quetzlcoatlus
-    - bereket
-    - dan.shick
-    - guergana
-    - hoo
-    - itamar
-    - jakob
-    - jan.dittrich
-    - ladsgroup
-    - lucas
-    - michael
-    - noa
-    - rosalie
-    - sarai
-    - silvan
-    - tom
-    - tobias
-    - tonina
-    - dat
-    - raja
-    - hanna
+  - 2024-06-01
+  # Every year
+  - 2024-01-01
+  - 2023-01-01
+  - 2022-01-01
+  - 2021-01-01
+  - 2020-01-01
+  - 2019-01-01
+  - 2018-01-01
+  - 2017-01-01
+  - 2016-01-01
+  - 2015-01-01
+  - 2014-01-01
+  - 2013-01-01
+  - 2012-01-01
 code:
   mwext-Wikibase: https://github.com/wikimedia/Wikibase.git
   mwext-Wikibase-sub-view-lib-value-view: https://gerrit.wikimedia.org/r/data-values/value-view

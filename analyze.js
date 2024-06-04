@@ -42,22 +42,27 @@ var rawConfig = yaml.load(fs.readFileSync(configFile, 'utf8'));
 // Config contains all of the data it needs per date (created from our rawConfig)
 var config = {}
 // There is a top level snapshots key, within are keys for dates, and within are keys for people names (which map to emails)
-for (let date in rawConfig['snapshots']) {
+for (let dateKey in rawConfig['snapshots']) {
+    let date = rawConfig['snapshots'][dateKey]
+    dateObj = new Date(date)
+
+    // Find ppl who have started but not yet ended on this date
+    // Each person has 3 keys, start, end, and email
+    let emailsForSnapshot = []
+    for (let personKey in rawConfig['people']) {
+        let person = rawConfig['people'][personKey]
+        let personStart = new Date(person.start)
+        let personEnd = new Date(person.end)
+        let personStarted = personStart == undefined || personStart <= dateObj
+        let personEnded = personEnd == undefined || personEnd >= dateObj
+        if(personStarted && !personEnded) {
+            emailsForSnapshot = emailsForSnapshot.concat(person.emails)
+        }
+    }
+
     // Create an entry for this date
     config[normalizeDate(date)] = {}
-    // And then add the team emails to this entry, using rawConfig['people'][person] as the mapping
-    let peopleForSnapshot = []
-    for (let personKey in rawConfig['snapshots'][date]) {
-        let person = rawConfig['snapshots'][date][personKey]
-        // Make sure the key exists or exit
-        if(!rawConfig['people'].hasOwnProperty(person)) {
-            console.log("Person " + person + " does not exist in the people list!")
-            exit()
-        }
-        peopleForSnapshot = peopleForSnapshot.concat(rawConfig['people'][person])
-    }
-    config[normalizeDate(date)].team = peopleForSnapshot
-    // And then add the code and components to each of these entries
+    config[normalizeDate(date)].team = emailsForSnapshot
     config[normalizeDate(date)].code = rawConfig['code']
     config[normalizeDate(date)].components = rawConfig['components']
 }
