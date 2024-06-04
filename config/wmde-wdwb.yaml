@@ -1,669 +1,288 @@
 ---
-
-2024-06-01:
-  code:
-    mwext-Wikibase: https://github.com/wikimedia/Wikibase.git
-    mwext-Wikibase-sub-view-lib-value-view: https://gerrit.wikimedia.org/r/data-values/value-view
-    mwext-Wikibase-sub-view-lib-wikibase-serialization: https://phabricator.wikimedia.org/source/wikibase-serialization.git
-    mwext-Wikibase-sub-view-lib-datavalues-javascript: https://phabricator.wikimedia.org/source/datavalues-javascript.git
-    mwext-Wikibase-sub-view-lib-wikibase-data-model: https://phabricator.wikimedia.org/source/wikibase-data-model.git
-    mwext-Wikibase-sub-view-lib-wikibase-termbox: https://gerrit.wikimedia.org/r/wikibase/termbox
-    mwext-Wikibase-sub-lib-wikibase-api: https://gerrit.wikimedia.org/r/wikibase/javascript-api
-    mwext-WikibaseLexeme: https://github.com/wikimedia/mediawiki-extensions-WikibaseLexeme.git
-    mwext-WikibaseQualityConstraints: https://github.com/wikimedia/mediawiki-extensions-WikibaseQualityConstraints.git
-    mwext-WikibaseManifest: https://github.com/wikimedia/mediawiki-extensions-WikibaseManifest.git
-    mwext-WikibaseMediaInfo: https://github.com/wikimedia/mediawiki-extensions-WikibaseMediaInfo.git
-    mwext-WikibaseCirrusSearch: https://github.com/wikimedia/mediawiki-extensions-WikibaseCirrusSearch.git
-    mwext-WikibaseLexemeCirrusSearch: https://github.com/wikimedia/mediawiki-extensions-WikibaseLexemeCirrusSearch.git
-    mwext-ArticlePlaceholder: https://github.com/wikimedia/mediawiki-extensions-ArticlePlaceholder.git
-    mwext-Cognate: https://github.com/wikimedia/mediawiki-extensions-Cognate.git
-    mwext-InterwikiSorting: https://github.com/wikimedia/mediawiki-extensions-InterwikiSorting.git
-    mwext-WikidataOrg: https://github.com/wikimedia/mediawiki-extensions-Wikidata.org.git
-    mwext-WikibaseReconcileEdit: https://github.com/wmde/WikibaseReconcileEdit.git
-    mwext-PropertySuggester: https://github.com/wikimedia/mediawiki-extensions-PropertySuggester.git
-    gerrit-wb-property-suggester-scripts: https://gerrit.wikimedia.org/r/wikibase/property-suggester-scripts.git
-    gerrit-purtle: https://gerrit.wikimedia.org/r/purtle.git
-    gh-WikibaseDataModel: https://github.com/wmde/WikibaseDataModel.git
-    gh-WikibaseDataModelServices: https://github.com/wmde/WikibaseDataModelServices.git
-    gh-WikibaseDataModelSerialization: https://github.com/wmde/WikibaseDataModelSerialization.git
-    gh-WikibaseInternalSerialization: https://github.com/wmde/WikibaseInternalSerialization.git
-    gh-query-gui: https://gerrit.wikimedia.org/r/wikidata/query/gui
-    gh-query-builder: https://gerrit.wikimedia.org/r/wikidata/query-builder
-    gh-php-vuejs-templating: https://github.com/wmde/php-vuejs-templating.git
-    gh-wikibase-release-pipeline: https://github.com/wmde/wikibase-release-pipeline.git
-    gh-wikibase-docker: https://github.com/wmde/wikibase-docker.git
-    gh-wikit: https://github.com/wmde/wikit.git
-    gh-wikidata-mismatch-finder: https://github.com/wmde/wikidata-mismatch-finder
-    gh-wikidata-wikibase-architecture: https://github.com/wmde/wikidata-wikibase-architecture
-    gh-wikidata-wikibase-team: https://github.com/wmde/wikidata-wikibase-team
-  team:
-  - quetzlcoatlus@gmail.com
-  - dan.shick@wikimedia.de
-  - guergana.tzatchkova@wikimedia.de
-  - hoo@online.de
-  - itamar.givon.dev@gmail.com
-  - itamar.givon@wikimedia.de
-  - jakob.warkotsch@wikimedia.de
-  - j.warkotsch@gmail.com
-  - lucas.werkmeister@wikimedia.de
-  - noa.rave@wikimedia.de
-  - perside.rosalie@wikimedia.de
-  - sarai.sanchez@wikimedia.de
-  - silvan.heintze@wikimedia.de
-  - thomas.arrow_ext@wikimedia.de
-  - tarrow@users.noreply.github.com
-  - bomarrow1@gmail.com
-  - thomasarrow@gmail.com
-  - dat.nguyen@wikimedia.de
-  - 67963068+raja-wmde@users.noreply.github.com
-  - hasan.akguen@wikimedia.de
-  - oliver.shotton@wikimedia.de
-  - outdooracorn@gmail.com
-  - deniz.erdogan@wikimedia.de
-  - muhammad.jaziraly@extern.wikimedia.de
-  - muhammad.jaziraly@wikimedia.de
-  - arthur.taylor@wikimedia.de
-  - dima.koushha@wikimedia.de
-  components:
-    Repo:
+people:
+  2024-06-01:
+    - quetzlcoatlus@gmail.com
+    - dan.shick@wikimedia.de
+    - guergana.tzatchkova@wikimedia.de
+    - hoo@online.de
+    - itamar.givon.dev@gmail.com
+    - itamar.givon@wikimedia.de
+    - jakob.warkotsch@wikimedia.de
+    - j.warkotsch@gmail.com
+    - lucas.werkmeister@wikimedia.de
+    - noa.rave@wikimedia.de
+    - perside.rosalie@wikimedia.de
+    - sarai.sanchez@wikimedia.de
+    - silvan.heintze@wikimedia.de
+    - thomas.arrow_ext@wikimedia.de
+    - tarrow@users.noreply.github.com
+    - bomarrow1@gmail.com
+    - thomasarrow@gmail.com
+    - dat.nguyen@wikimedia.de
+    - 67963068+raja-wmde@users.noreply.github.com
+    - hasan.akguen@wikimedia.de
+    - oliver.shotton@wikimedia.de
+    - outdooracorn@gmail.com
+    - deniz.erdogan@wikimedia.de
+    - muhammad.jaziraly@extern.wikimedia.de
+    - muhammad.jaziraly@wikimedia.de
+    - arthur.taylor@wikimedia.de
+    - dima.koushha@wikimedia.de
+    - cynthia.makonyango@wikimedia.de
+    - loren.johnson@wikimedia.de
+    - rti@users.noreply.github.com
+    - 132473526+adeeri@users.noreply.github.com
+    - frederik.ring@wikimedia.de
+  2024-01-01: 
+    - quetzlcoatlus@gmail.com
+    - dan.shick@wikimedia.de
+    - guergana.tzatchkova@wikimedia.de
+    - hoo@online.de
+    - itamar.givon.dev@gmail.com
+    - itamar.givon@wikimedia.de
+    - jakob.warkotsch@wikimedia.de
+    - j.warkotsch@gmail.com
+    - lucas.werkmeister@wikimedia.de
+    - mic.grosse@googlemail.com
+    - michael.grosse@wikimedia.de
+    - noa.rave@wikimedia.de
+    - perside.rosalie@wikimedia.de
+    - sarai.sanchez@wikimedia.de
+    - silvan.heintze@wikimedia.de
+    - thomas.arrow_ext@wikimedia.de
+    - tarrow@users.noreply.github.com
+    - bomarrow1@gmail.com
+    - thomasarrow@gmail.com
+    - dat.nguyen@wikimedia.de
+    - 67963068+raja-wmde@users.noreply.github.com
+    - hasan.akguen@wikimedia.de
+    - oliver.shotton@wikimedia.de
+    - outdooracorn@gmail.com
+    - deniz.erdogan@wikimedia.de
+    - muhammad.jaziraly@extern.wikimedia.de
+    - muhammad.jaziraly@wikimedia.de
+    - arthur.taylor@wikimedia.de
+    - loren.johnson@wikimedia.de
+    - rti@users.noreply.github.com
+    - 132473526+adeeri@users.noreply.github.com
+    - frederik.ring@wikimedia.de
+  2023-01-01: 
+    - addshorewiki@gmail.com
+    - adamshorland@gmail.com
+    - addshore@users.noreply.github.com
+    - adam.shorland@wikimedia.de
+    - quetzlcoatlus@gmail.com
+    - dan.shick@wikimedia.de
+    - guergana.tzatchkova@wikimedia.de
+    - hoo@online.de
+    - itamar.givon.dev@gmail.com
+    - itamar.givon@wikimedia.de
+    - jakob.warkotsch@wikimedia.de
+    - j.warkotsch@gmail.com
+    - lucas.werkmeister@wikimedia.de
+    - mic.grosse@googlemail.com
+    - michael.grosse@wikimedia.de
+    - noa.rave@wikimedia.de
+    - perside.rosalie@wikimedia.de
+    - sarai.sanchez@wikimedia.de
+    - silvan.heintze@wikimedia.de
+    - thomas.arrow_ext@wikimedia.de
+    - tarrow@users.noreply.github.com
+    - bomarrow1@gmail.com
+    - thomasarrow@gmail.com
+    - dat.nguyen@wikimedia.de
+    - 67963068+raja-wmde@users.noreply.github.com
+    - hasan.akguen@wikimedia.de
+    - oliver.shotton@wikimedia.de
+    - outdooracorn@gmail.com
+    - deniz.erdogan@wikimedia.de
+    - muhammad.jaziraly@extern.wikimedia.de
+    - muhammad.jaziraly@wikimedia.de
+  2022-01-01: 
+    - addshorewiki@gmail.com
+    - adamshorland@gmail.com
+    - addshore@users.noreply.github.com
+    - adam.shorland@wikimedia.de
+    - quetzlcoatlus@gmail.com
+    - dan.shick@wikimedia.de
+    - guergana.tzatchkova@wikimedia.de
+    - hoo@online.de
+    - itamar.givon.dev@gmail.com
+    - itamar.givon@wikimedia.de
+    - jakob.warkotsch@wikimedia.de
+    - j.warkotsch@gmail.com
+    - jan.dittrich@wikimedia.de
+    - lucas.werkmeister@wikimedia.de
+    - mic.grosse@googlemail.com
+    - michael.grosse@wikimedia.de
+    - noa.rave@wikimedia.de
+    - perside.rosalie@wikimedia.de
+    - sarai.sanchez@wikimedia.de
+    - silvan.heintze@wikimedia.de
+    - thomas.arrow_ext@wikimedia.de
+    - tarrow@users.noreply.github.com
+    - bomarrow1@gmail.com
+    - thomasarrow@gmail.com
+    - tobias.andersson@wikimedia.de
+    - tobias.ande@gmail.com
+    - dat.nguyen@wikimedia.de
+    - 67963068+raja-wmde@users.noreply.github.com
+    - hanna.petruschat@wikimedia.de
+    - 45200197+hanna-p-wmde@users.noreply.github.com
+    - oliver.shotton@wikimedia.de
+    - outdooracorn@gmail.com
+    - deniz.erdogan@wikimedia.de
+  2021-01-01: 
+    - addshorewiki@gmail.com
+    - adamshorland@gmail.com
+    - addshore@users.noreply.github.com
+    - adam.shorland@wikimedia.de
+    - quetzlcoatlus@gmail.com
+    - bereket.teshome@wikimedia.de
+    - 71328938+bereket-WMDE@users.noreply.github.com
+    - dan.shick@wikimedia.de
+    - guergana.tzatchkova@wikimedia.de
+    - hoo@online.de
+    - itamar.givon.dev@gmail.com
+    - itamar.givon@wikimedia.de
+    - jakob.warkotsch@wikimedia.de
+    - j.warkotsch@gmail.com
+    - jan.dittrich@wikimedia.de
+    - ladsgroup@gmail.com
+    - Ladsgroup@gmail.com
+    - lucas.werkmeister@wikimedia.de
+    - mic.grosse@googlemail.com
+    - michael.grosse@wikimedia.de
+    - noa.rave@wikimedia.de
+    - perside.rosalie@wikimedia.de
+    - sarai.sanchez@wikimedia.de
+    - silvan.heintze@wikimedia.de
+    - thomas.arrow_ext@wikimedia.de
+    - tarrow@users.noreply.github.com
+    - bomarrow1@gmail.com
+    - thomasarrow@gmail.com
+    - tobias.andersson@wikimedia.de
+    - tobias.ande@gmail.com
+    - tonina.zhelyazkova@wikimedia.de
+    - dat.nguyen@wikimedia.de
+    - 67963068+raja-wmde@users.noreply.github.com
+    - hanna.petruschat@wikimedia.de
+    - 45200197+hanna-p-wmde@users.noreply.github.com
+code:
+  mwext-Wikibase: https://github.com/wikimedia/Wikibase.git
+  mwext-Wikibase-sub-view-lib-value-view: https://gerrit.wikimedia.org/r/data-values/value-view
+  mwext-Wikibase-sub-view-lib-wikibase-serialization: https://phabricator.wikimedia.org/source/wikibase-serialization.git
+  mwext-Wikibase-sub-view-lib-datavalues-javascript: https://phabricator.wikimedia.org/source/datavalues-javascript.git
+  mwext-Wikibase-sub-view-lib-wikibase-data-model: https://phabricator.wikimedia.org/source/wikibase-data-model.git
+  mwext-Wikibase-sub-view-lib-wikibase-termbox: https://gerrit.wikimedia.org/r/wikibase/termbox
+  mwext-Wikibase-sub-lib-wikibase-api: https://gerrit.wikimedia.org/r/wikibase/javascript-api
+  mwext-WikibaseLexeme: https://github.com/wikimedia/mediawiki-extensions-WikibaseLexeme.git
+  mwext-WikibaseQualityConstraints: https://github.com/wikimedia/mediawiki-extensions-WikibaseQualityConstraints.git
+  mwext-WikibaseManifest: https://github.com/wikimedia/mediawiki-extensions-WikibaseManifest.git
+  mwext-WikibaseMediaInfo: https://github.com/wikimedia/mediawiki-extensions-WikibaseMediaInfo.git
+  mwext-WikibaseCirrusSearch: https://github.com/wikimedia/mediawiki-extensions-WikibaseCirrusSearch.git
+  mwext-WikibaseLexemeCirrusSearch: https://github.com/wikimedia/mediawiki-extensions-WikibaseLexemeCirrusSearch.git
+  mwext-ArticlePlaceholder: https://github.com/wikimedia/mediawiki-extensions-ArticlePlaceholder.git
+  mwext-Cognate: https://github.com/wikimedia/mediawiki-extensions-Cognate.git
+  mwext-InterwikiSorting: https://github.com/wikimedia/mediawiki-extensions-InterwikiSorting.git
+  mwext-WikidataOrg: https://github.com/wikimedia/mediawiki-extensions-Wikidata.org.git
+  mwext-WikibaseReconcileEdit: https://github.com/wmde/WikibaseReconcileEdit.git
+  mwext-PropertySuggester: https://github.com/wikimedia/mediawiki-extensions-PropertySuggester.git
+  gerrit-wb-property-suggester-scripts: https://gerrit.wikimedia.org/r/wikibase/property-suggester-scripts.git
+  gerrit-purtle: https://gerrit.wikimedia.org/r/purtle.git
+  gh-WikibaseDataModel: https://github.com/wmde/WikibaseDataModel.git
+  gh-WikibaseDataModelServices: https://github.com/wmde/WikibaseDataModelServices.git
+  gh-WikibaseDataModelSerialization: https://github.com/wmde/WikibaseDataModelSerialization.git
+  gh-WikibaseInternalSerialization: https://github.com/wmde/WikibaseInternalSerialization.git
+  gh-query-gui: https://gerrit.wikimedia.org/r/wikidata/query/gui
+  gh-query-builder: https://gerrit.wikimedia.org/r/wikidata/query-builder
+  gh-php-vuejs-templating: https://github.com/wmde/php-vuejs-templating.git
+  gh-wikibase-release-pipeline: https://github.com/wmde/wikibase-release-pipeline.git
+  gh-wikibase-docker: https://github.com/wmde/wikibase-docker.git
+  gh-wikit: https://github.com/wmde/wikit.git
+  gh-wikidata-mismatch-finder: https://github.com/wmde/wikidata-mismatch-finder
+  gh-wikidata-wikibase-architecture: https://github.com/wmde/wikidata-wikibase-architecture
+  gh-wikidata-wikibase-team: https://github.com/wmde/wikidata-wikibase-team
+  gh-wbaas-deploy: https://github.com/wmde/wbaas-deploy
+  gh-wbaas-backup: https://github.com/wmde/wbaas-backup
+  gh-wikibase-cloud-status: https://github.com/wmde/wikibase-cloud-status
+  gh-wdio-wikibase: https://github.com/wmde/wdio-wikibase
+  gh-wikidata-item-quality-evaluator: https://github.com/wmde/wikidata-item-quality-evaluator
+  gh-wikidata-constraints-violation-checker: https://github.com/wmde/wikidata-constraints-violation-checker
+  gh-new-lexeme-special-page: https://github.com/wmde/new-lexeme-special-page
+  gh-connecting-senses: https://github.com/wmde/connecting-senses
+components:
+  Repo:
     - mwext-Wikibase/repo/
-    RepoFederatedProperties:
+    - gh-wdio-wikibase
+  RepoFederatedProperties:
     - mwext-Wikibase/repo/includes/FederatedProperties
     - mwext-Wikibase/build/federated-properties
-    RepoView:
+  RepoRestApi:
+    - mwext-Wikibase/repo/rest-api
+  RepoView:
     - mwext-Wikibase/view/
     - mwext-Wikibase-sub-view-
-    Client:
+  Client:
     - mwext-Wikibase/client/
-    Lib:
+  Lib:
     - mwext-Wikibase/lib/
     - mwext-Wikibase-sub-lib-
-    DataAccess:
+  DataAccess:
     - mwext-Wikibase/data-access/
-    Bridge:
+  Bridge:
     - mwext-Wikibase/client/data-bridge/
-    Lexeme:
+  Lexeme:
     - mwext-WikibaseLexeme/
     - gh-php-vuejs-templating/
-    WikibaseReconcileEdit:
+    - gh-new-lexeme-special-page
+    - gh-connecting-senses
+  WikibaseReconcileEdit:
     - WikibaseReconcileEdit/
-    QualityConstraints:
+  QualityConstraints:
     - mwext-WikibaseQualityConstraints/
-    ArticlePlaceholder:
+  ArticlePlaceholder:
     - mwext-ArticlePlaceholder/
-    Cognate:
+  Cognate:
     - mwext-Cognate/
-    InterwikiSorting:
+  InterwikiSorting:
     - mwext-InterwikiSorting/
-    WikidataOrg:
+  WikidataOrg:
     - mwext-WikidataOrg/
-    PropertySuggester:
+    - gh-wikidata-item-quality-evaluator
+    - gh-wikidata-constraints-violation-checker
+  PropertySuggester:
     - mwext-PropertySuggester/
     - gerrit-wb-property-suggester-scripts/
-    Manifest:
+  Manifest:
     - mwext-WikibaseManifest/
-    TermBox:
+  TermBox:
     - mwext-Wikibase-sub-view-lib-wikibase-termbox/
-    QueryGui:
+  QueryGui:
     - gh-query-gui/
-    QueryBuilder:
+  QueryBuilder:
     - gh-query-builder/
-    DataModelLibs:
+  DataModelLibs:
     - gh-WikibaseDataModel
     - gh-WikibaseInternal
-    DesignSystem:
+  DesignSystem:
     - gh-wikit/
-    Purtle:
+  Purtle:
     - gerrit-purtle/
-    Releasing:
+  Releasing:
     - gh-wikibase-docker/
     - gh-wikibase-release-pipeline/
-    Docs:
+  Docs:
     - gh-wikidata-wikibase-architecture/
     - gh-wikidata-wikibase-team/
     - mwext-Wikibase/docs/
-    MediaInfo:
+  MediaInfo:
     - mwext-WikibaseMediaInfo/
-    MissmatchFinder:
+  MissmatchFinder:
     - gh-wikidata-mismatch-finder/
-    Search:
+  Search:
     - mwext-WikibaseCirrusSearch/
     - mwext-WikibaseLexemeCirrusSearch/
-2024-01-01:
-  code:
-    mwext-Wikibase: https://github.com/wikimedia/Wikibase.git
-    mwext-Wikibase-sub-view-lib-value-view: https://gerrit.wikimedia.org/r/data-values/value-view
-    mwext-Wikibase-sub-view-lib-wikibase-serialization: https://phabricator.wikimedia.org/source/wikibase-serialization.git
-    mwext-Wikibase-sub-view-lib-datavalues-javascript: https://phabricator.wikimedia.org/source/datavalues-javascript.git
-    mwext-Wikibase-sub-view-lib-wikibase-data-model: https://phabricator.wikimedia.org/source/wikibase-data-model.git
-    mwext-Wikibase-sub-view-lib-wikibase-termbox: https://gerrit.wikimedia.org/r/wikibase/termbox
-    mwext-Wikibase-sub-lib-wikibase-api: https://gerrit.wikimedia.org/r/wikibase/javascript-api
-    mwext-WikibaseLexeme: https://github.com/wikimedia/mediawiki-extensions-WikibaseLexeme.git
-    mwext-WikibaseQualityConstraints: https://github.com/wikimedia/mediawiki-extensions-WikibaseQualityConstraints.git
-    mwext-WikibaseManifest: https://github.com/wikimedia/mediawiki-extensions-WikibaseManifest.git
-    mwext-WikibaseMediaInfo: https://github.com/wikimedia/mediawiki-extensions-WikibaseMediaInfo.git
-    mwext-WikibaseCirrusSearch: https://github.com/wikimedia/mediawiki-extensions-WikibaseCirrusSearch.git
-    mwext-WikibaseLexemeCirrusSearch: https://github.com/wikimedia/mediawiki-extensions-WikibaseLexemeCirrusSearch.git
-    mwext-ArticlePlaceholder: https://github.com/wikimedia/mediawiki-extensions-ArticlePlaceholder.git
-    mwext-Cognate: https://github.com/wikimedia/mediawiki-extensions-Cognate.git
-    mwext-InterwikiSorting: https://github.com/wikimedia/mediawiki-extensions-InterwikiSorting.git
-    mwext-WikidataOrg: https://github.com/wikimedia/mediawiki-extensions-Wikidata.org.git
-    mwext-WikibaseReconcileEdit: https://github.com/wmde/WikibaseReconcileEdit.git
-    mwext-PropertySuggester: https://github.com/wikimedia/mediawiki-extensions-PropertySuggester.git
-    gerrit-wb-property-suggester-scripts: https://gerrit.wikimedia.org/r/wikibase/property-suggester-scripts.git
-    gerrit-purtle: https://gerrit.wikimedia.org/r/purtle.git
-    gh-WikibaseDataModel: https://github.com/wmde/WikibaseDataModel.git
-    gh-WikibaseDataModelServices: https://github.com/wmde/WikibaseDataModelServices.git
-    gh-WikibaseDataModelSerialization: https://github.com/wmde/WikibaseDataModelSerialization.git
-    gh-WikibaseInternalSerialization: https://github.com/wmde/WikibaseInternalSerialization.git
-    gh-query-gui: https://gerrit.wikimedia.org/r/wikidata/query/gui
-    gh-query-builder: https://gerrit.wikimedia.org/r/wikidata/query-builder
-    gh-php-vuejs-templating: https://github.com/wmde/php-vuejs-templating.git
-    gh-wikibase-release-pipeline: https://github.com/wmde/wikibase-release-pipeline.git
-    gh-wikibase-docker: https://github.com/wmde/wikibase-docker.git
-    gh-wikit: https://github.com/wmde/wikit.git
-    gh-wikidata-mismatch-finder: https://github.com/wmde/wikidata-mismatch-finder
-    gh-wikidata-wikibase-architecture: https://github.com/wmde/wikidata-wikibase-architecture
-    gh-wikidata-wikibase-team: https://github.com/wmde/wikidata-wikibase-team
-  team:
-  - quetzlcoatlus@gmail.com
-  - dan.shick@wikimedia.de
-  - guergana.tzatchkova@wikimedia.de
-  - hoo@online.de
-  - itamar.givon.dev@gmail.com
-  - itamar.givon@wikimedia.de
-  - jakob.warkotsch@wikimedia.de
-  - j.warkotsch@gmail.com
-  - lucas.werkmeister@wikimedia.de
-  - mic.grosse@googlemail.com
-  - michael.grosse@wikimedia.de
-  - noa.rave@wikimedia.de
-  - perside.rosalie@wikimedia.de
-  - sarai.sanchez@wikimedia.de
-  - silvan.heintze@wikimedia.de
-  - thomas.arrow_ext@wikimedia.de
-  - tarrow@users.noreply.github.com
-  - bomarrow1@gmail.com
-  - thomasarrow@gmail.com
-  - dat.nguyen@wikimedia.de
-  - 67963068+raja-wmde@users.noreply.github.com
-  - hasan.akguen@wikimedia.de
-  - oliver.shotton@wikimedia.de
-  - outdooracorn@gmail.com
-  - deniz.erdogan@wikimedia.de
-  - muhammad.jaziraly@extern.wikimedia.de
-  - muhammad.jaziraly@wikimedia.de
-  - arthur.taylor@wikimedia.de
-  components:
-    Repo:
-    - mwext-Wikibase/repo/
-    RepoFederatedProperties:
-    - mwext-Wikibase/repo/includes/FederatedProperties
-    - mwext-Wikibase/build/federated-properties
-    RepoView:
-    - mwext-Wikibase/view/
-    - mwext-Wikibase-sub-view-
-    Client:
-    - mwext-Wikibase/client/
-    Lib:
-    - mwext-Wikibase/lib/
-    - mwext-Wikibase-sub-lib-
-    DataAccess:
-    - mwext-Wikibase/data-access/
-    Bridge:
-    - mwext-Wikibase/client/data-bridge/
-    Lexeme:
-    - mwext-WikibaseLexeme/
-    - gh-php-vuejs-templating/
-    WikibaseReconcileEdit:
-    - WikibaseReconcileEdit/
-    QualityConstraints:
-    - mwext-WikibaseQualityConstraints/
-    ArticlePlaceholder:
-    - mwext-ArticlePlaceholder/
-    Cognate:
-    - mwext-Cognate/
-    InterwikiSorting:
-    - mwext-InterwikiSorting/
-    WikidataOrg:
-    - mwext-WikidataOrg/
-    PropertySuggester:
-    - mwext-PropertySuggester/
-    - gerrit-wb-property-suggester-scripts/
-    Manifest:
-    - mwext-WikibaseManifest/
-    TermBox:
-    - mwext-Wikibase-sub-view-lib-wikibase-termbox/
-    QueryGui:
-    - gh-query-gui/
-    QueryBuilder:
-    - gh-query-builder/
-    DataModelLibs:
-    - gh-WikibaseDataModel
-    - gh-WikibaseInternal
-    DesignSystem:
-    - gh-wikit/
-    Purtle:
-    - gerrit-purtle/
-    Releasing:
-    - gh-wikibase-docker/
-    - gh-wikibase-release-pipeline/
-    Docs:
-    - gh-wikidata-wikibase-architecture/
-    - gh-wikidata-wikibase-team/
-    - mwext-Wikibase/docs/
-    MediaInfo:
-    - mwext-WikibaseMediaInfo/
-    MissmatchFinder:
-    - gh-wikidata-mismatch-finder/
-    Search:
-    - mwext-WikibaseCirrusSearch/
-    - mwext-WikibaseLexemeCirrusSearch/
-2023-01-01:
-  code:
-    mwext-Wikibase: https://github.com/wikimedia/Wikibase.git
-    mwext-Wikibase-sub-view-lib-value-view: https://gerrit.wikimedia.org/r/data-values/value-view
-    mwext-Wikibase-sub-view-lib-wikibase-serialization: https://phabricator.wikimedia.org/source/wikibase-serialization.git
-    mwext-Wikibase-sub-view-lib-datavalues-javascript: https://phabricator.wikimedia.org/source/datavalues-javascript.git
-    mwext-Wikibase-sub-view-lib-wikibase-data-model: https://phabricator.wikimedia.org/source/wikibase-data-model.git
-    mwext-Wikibase-sub-view-lib-wikibase-termbox: https://gerrit.wikimedia.org/r/wikibase/termbox
-    mwext-Wikibase-sub-lib-wikibase-api: https://gerrit.wikimedia.org/r/wikibase/javascript-api
-    mwext-WikibaseLexeme: https://github.com/wikimedia/mediawiki-extensions-WikibaseLexeme.git
-    mwext-WikibaseQualityConstraints: https://github.com/wikimedia/mediawiki-extensions-WikibaseQualityConstraints.git
-    mwext-WikibaseManifest: https://github.com/wikimedia/mediawiki-extensions-WikibaseManifest.git
-    mwext-WikibaseMediaInfo: https://github.com/wikimedia/mediawiki-extensions-WikibaseMediaInfo.git
-    mwext-WikibaseCirrusSearch: https://github.com/wikimedia/mediawiki-extensions-WikibaseCirrusSearch.git
-    mwext-WikibaseLexemeCirrusSearch: https://github.com/wikimedia/mediawiki-extensions-WikibaseLexemeCirrusSearch.git
-    mwext-ArticlePlaceholder: https://github.com/wikimedia/mediawiki-extensions-ArticlePlaceholder.git
-    mwext-Cognate: https://github.com/wikimedia/mediawiki-extensions-Cognate.git
-    mwext-InterwikiSorting: https://github.com/wikimedia/mediawiki-extensions-InterwikiSorting.git
-    mwext-WikidataOrg: https://github.com/wikimedia/mediawiki-extensions-Wikidata.org.git
-    mwext-WikibaseReconcileEdit: https://github.com/wmde/WikibaseReconcileEdit.git
-    mwext-PropertySuggester: https://github.com/wikimedia/mediawiki-extensions-PropertySuggester.git
-    gerrit-wb-property-suggester-scripts: https://gerrit.wikimedia.org/r/wikibase/property-suggester-scripts.git
-    gerrit-purtle: https://gerrit.wikimedia.org/r/purtle.git
-    gh-WikibaseDataModel: https://github.com/wmde/WikibaseDataModel.git
-    gh-WikibaseDataModelServices: https://github.com/wmde/WikibaseDataModelServices.git
-    gh-WikibaseDataModelSerialization: https://github.com/wmde/WikibaseDataModelSerialization.git
-    gh-WikibaseInternalSerialization: https://github.com/wmde/WikibaseInternalSerialization.git
-    gh-query-gui: https://gerrit.wikimedia.org/r/wikidata/query/gui
-    gh-query-builder: https://gerrit.wikimedia.org/r/wikidata/query-builder
-    gh-php-vuejs-templating: https://github.com/wmde/php-vuejs-templating.git
-    gh-wikibase-release-pipeline: https://github.com/wmde/wikibase-release-pipeline.git
-    gh-wikibase-docker: https://github.com/wmde/wikibase-docker.git
-    gh-wikit: https://github.com/wmde/wikit.git
-    gh-wikidata-mismatch-finder: https://github.com/wmde/wikidata-mismatch-finder
-    gh-wikidata-wikibase-architecture: https://github.com/wmde/wikidata-wikibase-architecture
-    gh-wikidata-wikibase-team: https://github.com/wmde/wikidata-wikibase-team
-  team:
-  - addshorewiki@gmail.com
-  - adamshorland@gmail.com
-  - addshore@users.noreply.github.com
-  - adam.shorland@wikimedia.de
-  - quetzlcoatlus@gmail.com
-  - dan.shick@wikimedia.de
-  - guergana.tzatchkova@wikimedia.de
-  - hoo@online.de
-  - itamar.givon.dev@gmail.com
-  - itamar.givon@wikimedia.de
-  - jakob.warkotsch@wikimedia.de
-  - j.warkotsch@gmail.com
-  - lucas.werkmeister@wikimedia.de
-  - mic.grosse@googlemail.com
-  - michael.grosse@wikimedia.de
-  - noa.rave@wikimedia.de
-  - perside.rosalie@wikimedia.de
-  - sarai.sanchez@wikimedia.de
-  - silvan.heintze@wikimedia.de
-  - thomas.arrow_ext@wikimedia.de
-  - tarrow@users.noreply.github.com
-  - bomarrow1@gmail.com
-  - thomasarrow@gmail.com
-  - dat.nguyen@wikimedia.de
-  - 67963068+raja-wmde@users.noreply.github.com
-  - hasan.akguen@wikimedia.de
-  - oliver.shotton@wikimedia.de
-  - outdooracorn@gmail.com
-  - deniz.erdogan@wikimedia.de
-  - muhammad.jaziraly@extern.wikimedia.de
-  - muhammad.jaziraly@wikimedia.de
-  components:
-    Repo:
-    - mwext-Wikibase/repo/
-    RepoFederatedProperties:
-    - mwext-Wikibase/repo/includes/FederatedProperties
-    - mwext-Wikibase/build/federated-properties
-    RepoView:
-    - mwext-Wikibase/view/
-    - mwext-Wikibase-sub-view-
-    Client:
-    - mwext-Wikibase/client/
-    Lib:
-    - mwext-Wikibase/lib/
-    - mwext-Wikibase-sub-lib-
-    DataAccess:
-    - mwext-Wikibase/data-access/
-    Bridge:
-    - mwext-Wikibase/client/data-bridge/
-    Lexeme:
-    - mwext-WikibaseLexeme/
-    - gh-php-vuejs-templating/
-    WikibaseReconcileEdit:
-    - WikibaseReconcileEdit/
-    QualityConstraints:
-    - mwext-WikibaseQualityConstraints/
-    ArticlePlaceholder:
-    - mwext-ArticlePlaceholder/
-    Cognate:
-    - mwext-Cognate/
-    InterwikiSorting:
-    - mwext-InterwikiSorting/
-    WikidataOrg:
-    - mwext-WikidataOrg/
-    PropertySuggester:
-    - mwext-PropertySuggester/
-    - gerrit-wb-property-suggester-scripts/
-    Manifest:
-    - mwext-WikibaseManifest/
-    TermBox:
-    - mwext-Wikibase-sub-view-lib-wikibase-termbox/
-    QueryGui:
-    - gh-query-gui/
-    QueryBuilder:
-    - gh-query-builder/
-    DataModelLibs:
-    - gh-WikibaseDataModel
-    - gh-WikibaseInternal
-    DesignSystem:
-    - gh-wikit/
-    Purtle:
-    - gerrit-purtle/
-    Releasing:
-    - gh-wikibase-docker/
-    - gh-wikibase-release-pipeline/
-    Docs:
-    - gh-wikidata-wikibase-architecture/
-    - gh-wikidata-wikibase-team/
-    - mwext-Wikibase/docs/
-    MediaInfo:
-    - mwext-WikibaseMediaInfo/
-    MissmatchFinder:
-    - gh-wikidata-mismatch-finder/
-    Search:
-    - mwext-WikibaseCirrusSearch/
-    - mwext-WikibaseLexemeCirrusSearch/
-2022-01-01:
-  code:
-    mwext-Wikibase: https://github.com/wikimedia/Wikibase.git
-    mwext-Wikibase-sub-view-lib-value-view: https://gerrit.wikimedia.org/r/data-values/value-view
-    mwext-Wikibase-sub-view-lib-wikibase-serialization: https://phabricator.wikimedia.org/source/wikibase-serialization.git
-    mwext-Wikibase-sub-view-lib-datavalues-javascript: https://phabricator.wikimedia.org/source/datavalues-javascript.git
-    mwext-Wikibase-sub-view-lib-wikibase-data-model: https://phabricator.wikimedia.org/source/wikibase-data-model.git
-    mwext-Wikibase-sub-view-lib-wikibase-termbox: https://gerrit.wikimedia.org/r/wikibase/termbox
-    mwext-Wikibase-sub-lib-wikibase-api: https://gerrit.wikimedia.org/r/wikibase/javascript-api
-    mwext-WikibaseLexeme: https://github.com/wikimedia/mediawiki-extensions-WikibaseLexeme.git
-    mwext-WikibaseQualityConstraints: https://github.com/wikimedia/mediawiki-extensions-WikibaseQualityConstraints.git
-    mwext-WikibaseManifest: https://github.com/wikimedia/mediawiki-extensions-WikibaseManifest.git
-    mwext-WikibaseMediaInfo: https://github.com/wikimedia/mediawiki-extensions-WikibaseMediaInfo.git
-    mwext-WikibaseCirrusSearch: https://github.com/wikimedia/mediawiki-extensions-WikibaseCirrusSearch.git
-    mwext-WikibaseLexemeCirrusSearch: https://github.com/wikimedia/mediawiki-extensions-WikibaseLexemeCirrusSearch.git
-    mwext-ArticlePlaceholder: https://github.com/wikimedia/mediawiki-extensions-ArticlePlaceholder.git
-    mwext-Cognate: https://github.com/wikimedia/mediawiki-extensions-Cognate.git
-    mwext-InterwikiSorting: https://github.com/wikimedia/mediawiki-extensions-InterwikiSorting.git
-    mwext-WikidataOrg: https://github.com/wikimedia/mediawiki-extensions-Wikidata.org.git
-    mwext-WikibaseReconcileEdit: https://github.com/wmde/WikibaseReconcileEdit.git
-    mwext-PropertySuggester: https://github.com/wikimedia/mediawiki-extensions-PropertySuggester.git
-    gerrit-wb-property-suggester-scripts: https://gerrit.wikimedia.org/r/wikibase/property-suggester-scripts.git
-    gerrit-purtle: https://gerrit.wikimedia.org/r/purtle.git
-    gh-WikibaseDataModel: https://github.com/wmde/WikibaseDataModel.git
-    gh-WikibaseDataModelServices: https://github.com/wmde/WikibaseDataModelServices.git
-    gh-WikibaseDataModelSerialization: https://github.com/wmde/WikibaseDataModelSerialization.git
-    gh-WikibaseInternalSerialization: https://github.com/wmde/WikibaseInternalSerialization.git
-    gh-query-gui: https://gerrit.wikimedia.org/r/wikidata/query/gui
-    gh-query-builder: https://gerrit.wikimedia.org/r/wikidata/query-builder
-    gh-php-vuejs-templating: https://github.com/wmde/php-vuejs-templating.git
-    gh-wikibase-release-pipeline: https://github.com/wmde/wikibase-release-pipeline.git
-    gh-wikibase-docker: https://github.com/wmde/wikibase-docker.git
-    gh-wikit: https://github.com/wmde/wikit.git
-    gh-wikidata-mismatch-finder: https://github.com/wmde/wikidata-mismatch-finder
-    gh-wikidata-wikibase-architecture: https://github.com/wmde/wikidata-wikibase-architecture
-    gh-wikidata-wikibase-team: https://github.com/wmde/wikidata-wikibase-team
-  team:
-  - addshorewiki@gmail.com
-  - adamshorland@gmail.com
-  - addshore@users.noreply.github.com
-  - adam.shorland@wikimedia.de
-  - quetzlcoatlus@gmail.com
-  - dan.shick@wikimedia.de
-  - guergana.tzatchkova@wikimedia.de
-  - hoo@online.de
-  - itamar.givon.dev@gmail.com
-  - itamar.givon@wikimedia.de
-  - jakob.warkotsch@wikimedia.de
-  - j.warkotsch@gmail.com
-  - jan.dittrich@wikimedia.de
-  - lucas.werkmeister@wikimedia.de
-  - mic.grosse@googlemail.com
-  - michael.grosse@wikimedia.de
-  - noa.rave@wikimedia.de
-  - perside.rosalie@wikimedia.de
-  - sarai.sanchez@wikimedia.de
-  - silvan.heintze@wikimedia.de
-  - thomas.arrow_ext@wikimedia.de
-  - tarrow@users.noreply.github.com
-  - bomarrow1@gmail.com
-  - thomasarrow@gmail.com
-  - tobias.andersson@wikimedia.de
-  - tobias.ande@gmail.com
-  - dat.nguyen@wikimedia.de
-  - 67963068+raja-wmde@users.noreply.github.com
-  - hanna.petruschat@wikimedia.de
-  - 45200197+hanna-p-wmde@users.noreply.github.com
-  - oliver.shotton@wikimedia.de
-  - outdooracorn@gmail.com
-  - deniz.erdogan@wikimedia.de
-  components:
-    Repo:
-    - mwext-Wikibase/repo/
-    RepoFederatedProperties:
-    - mwext-Wikibase/repo/includes/FederatedProperties
-    - mwext-Wikibase/build/federated-properties
-    RepoView:
-    - mwext-Wikibase/view/
-    - mwext-Wikibase-sub-view-
-    Client:
-    - mwext-Wikibase/client/
-    Lib:
-    - mwext-Wikibase/lib/
-    - mwext-Wikibase-sub-lib-
-    DataAccess:
-    - mwext-Wikibase/data-access/
-    Bridge:
-    - mwext-Wikibase/client/data-bridge/
-    Lexeme:
-    - mwext-WikibaseLexeme/
-    - gh-php-vuejs-templating/
-    WikibaseReconcileEdit:
-    - WikibaseReconcileEdit/
-    QualityConstraints:
-    - mwext-WikibaseQualityConstraints/
-    ArticlePlaceholder:
-    - mwext-ArticlePlaceholder/
-    Cognate:
-    - mwext-Cognate/
-    InterwikiSorting:
-    - mwext-InterwikiSorting/
-    WikidataOrg:
-    - mwext-WikidataOrg/
-    PropertySuggester:
-    - mwext-PropertySuggester/
-    - gerrit-wb-property-suggester-scripts/
-    Manifest:
-    - mwext-WikibaseManifest/
-    TermBox:
-    - mwext-Wikibase-sub-view-lib-wikibase-termbox/
-    QueryGui:
-    - gh-query-gui/
-    QueryBuilder:
-    - gh-query-builder/
-    DataModelLibs:
-    - gh-WikibaseDataModel
-    - gh-WikibaseInternal
-    DesignSystem:
-    - gh-wikit/
-    Purtle:
-    - gerrit-purtle/
-    Releasing:
-    - gh-wikibase-docker/
-    - gh-wikibase-release-pipeline/
-    Docs:
-    - gh-wikidata-wikibase-architecture/
-    - gh-wikidata-wikibase-team/
-    - mwext-Wikibase/docs/
-    MediaInfo:
-    - mwext-WikibaseMediaInfo/
-    MissmatchFinder:
-    - gh-wikidata-mismatch-finder/
-    Search:
-    - mwext-WikibaseCirrusSearch/
-    - mwext-WikibaseLexemeCirrusSearch/
-2021-01-01:
-  name: initial
-  code:
-    mwext-Wikibase: https://github.com/wikimedia/Wikibase.git
-    mwext-Wikibase-sub-view-lib-value-view: https://gerrit.wikimedia.org/r/data-values/value-view
-    mwext-Wikibase-sub-view-lib-wikibase-serialization: https://phabricator.wikimedia.org/source/wikibase-serialization.git
-    mwext-Wikibase-sub-view-lib-datavalues-javascript: https://phabricator.wikimedia.org/source/datavalues-javascript.git
-    mwext-Wikibase-sub-view-lib-wikibase-data-model: https://phabricator.wikimedia.org/source/wikibase-data-model.git
-    mwext-Wikibase-sub-view-lib-wikibase-termbox: https://gerrit.wikimedia.org/r/wikibase/termbox
-    mwext-Wikibase-sub-lib-wikibase-api: https://gerrit.wikimedia.org/r/wikibase/javascript-api
-    mwext-WikibaseLexeme: https://github.com/wikimedia/mediawiki-extensions-WikibaseLexeme.git
-    mwext-WikibaseQualityConstraints: https://github.com/wikimedia/mediawiki-extensions-WikibaseQualityConstraints.git
-    mwext-WikibaseManifest: https://github.com/wikimedia/mediawiki-extensions-WikibaseManifest.git
-    mwext-WikibaseMediaInfo: https://github.com/wikimedia/mediawiki-extensions-WikibaseMediaInfo.git
-    mwext-WikibaseCirrusSearch: https://github.com/wikimedia/mediawiki-extensions-WikibaseCirrusSearch.git
-    mwext-WikibaseLexemeCirrusSearch: https://github.com/wikimedia/mediawiki-extensions-WikibaseLexemeCirrusSearch.git
-    mwext-ArticlePlaceholder: https://github.com/wikimedia/mediawiki-extensions-ArticlePlaceholder.git
-    mwext-Cognate: https://github.com/wikimedia/mediawiki-extensions-Cognate.git
-    mwext-InterwikiSorting: https://github.com/wikimedia/mediawiki-extensions-InterwikiSorting.git
-    mwext-WikidataOrg: https://github.com/wikimedia/mediawiki-extensions-Wikidata.org.git
-    mwext-WikibaseReconcileEdit: https://github.com/wmde/WikibaseReconcileEdit.git
-    mwext-PropertySuggester: https://github.com/wikimedia/mediawiki-extensions-PropertySuggester.git
-    gerrit-wb-property-suggester-scripts: https://gerrit.wikimedia.org/r/wikibase/property-suggester-scripts.git
-    gerrit-purtle: https://gerrit.wikimedia.org/r/purtle.git
-    gh-WikibaseDataModel: https://github.com/wmde/WikibaseDataModel.git
-    gh-WikibaseDataModelServices: https://github.com/wmde/WikibaseDataModelServices.git
-    gh-WikibaseDataModelSerialization: https://github.com/wmde/WikibaseDataModelSerialization.git
-    gh-WikibaseInternalSerialization: https://github.com/wmde/WikibaseInternalSerialization.git
-    gh-query-gui: https://gerrit.wikimedia.org/r/wikidata/query/gui
-    gh-query-builder: https://gerrit.wikimedia.org/r/wikidata/query-builder
-    gh-php-vuejs-templating: https://github.com/wmde/php-vuejs-templating.git
-    gh-wikibase-release-pipeline: https://github.com/wmde/wikibase-release-pipeline.git
-    gh-wikibase-docker: https://github.com/wmde/wikibase-docker.git
-    gh-wikit: https://github.com/wmde/wikit.git
-    gh-wikidata-mismatch-finder: https://github.com/wmde/wikidata-mismatch-finder
-    gh-wikidata-wikibase-architecture: https://github.com/wmde/wikidata-wikibase-architecture
-    gh-wikidata-wikibase-team: https://github.com/wmde/wikidata-wikibase-team
-  team:
-  - addshorewiki@gmail.com
-  - adamshorland@gmail.com
-  - addshore@users.noreply.github.com
-  - adam.shorland@wikimedia.de
-  - quetzlcoatlus@gmail.com
-  - bereket.teshome@wikimedia.de
-  - 71328938+bereket-WMDE@users.noreply.github.com
-  - dan.shick@wikimedia.de
-  - guergana.tzatchkova@wikimedia.de
-  - hoo@online.de
-  - itamar.givon.dev@gmail.com
-  - itamar.givon@wikimedia.de
-  - jakob.warkotsch@wikimedia.de
-  - j.warkotsch@gmail.com
-  - jan.dittrich@wikimedia.de
-  - ladsgroup@gmail.com
-  - Ladsgroup@gmail.com
-  - lucas.werkmeister@wikimedia.de
-  - mic.grosse@googlemail.com
-  - michael.grosse@wikimedia.de
-  - noa.rave@wikimedia.de
-  - perside.rosalie@wikimedia.de
-  - sarai.sanchez@wikimedia.de
-  - silvan.heintze@wikimedia.de
-  - thomas.arrow_ext@wikimedia.de
-  - tarrow@users.noreply.github.com
-  - bomarrow1@gmail.com
-  - thomasarrow@gmail.com
-  - tobias.andersson@wikimedia.de
-  - tobias.ande@gmail.com
-  - tonina.zhelyazkova@wikimedia.de
-  - dat.nguyen@wikimedia.de
-  - 67963068+raja-wmde@users.noreply.github.com
-  - hanna.petruschat@wikimedia.de
-  - 45200197+hanna-p-wmde@users.noreply.github.com
-  - oliver.shotton@wikimedia.de
-  - outdooracorn@gmail.com
-  components:
-    Repo:
-    - mwext-Wikibase/repo/
-    RepoFederatedProperties:
-    - mwext-Wikibase/repo/includes/FederatedProperties
-    - mwext-Wikibase/build/federated-properties
-    RepoView:
-    - mwext-Wikibase/view/
-    - mwext-Wikibase-sub-view-
-    Client:
-    - mwext-Wikibase/client/
-    Lib:
-    - mwext-Wikibase/lib/
-    - mwext-Wikibase-sub-lib-
-    DataAccess:
-    - mwext-Wikibase/data-access/
-    Bridge:
-    - mwext-Wikibase/client/data-bridge/
-    Lexeme:
-    - mwext-WikibaseLexeme/
-    - gh-php-vuejs-templating/
-    WikibaseReconcileEdit:
-    - WikibaseReconcileEdit/
-    QualityConstraints:
-    - mwext-WikibaseQualityConstraints/
-    ArticlePlaceholder:
-    - mwext-ArticlePlaceholder/
-    Cognate:
-    - mwext-Cognate/
-    InterwikiSorting:
-    - mwext-InterwikiSorting/
-    WikidataOrg:
-    - mwext-WikidataOrg/
-    PropertySuggester:
-    - mwext-PropertySuggester/
-    - gerrit-wb-property-suggester-scripts/
-    Manifest:
-    - mwext-WikibaseManifest/
-    TermBox:
-    - mwext-Wikibase-sub-view-lib-wikibase-termbox/
-    QueryGui:
-    - gh-query-gui/
-    QueryBuilder:
-    - gh-query-builder/
-    DataModelLibs:
-    - gh-WikibaseDataModel
-    - gh-WikibaseInternal
-    DesignSystem:
-    - gh-wikit/
-    Purtle:
-    - gerrit-purtle/
-    Releasing:
-    - gh-wikibase-docker/
-    - gh-wikibase-release-pipeline/
-    Docs:
-    - gh-wikidata-wikibase-architecture/
-    - gh-wikidata-wikibase-team/
-    - mwext-Wikibase/docs/
-    MediaInfo:
-    - mwext-WikibaseMediaInfo/
-    MissmatchFinder:
-    - gh-wikidata-mismatch-finder/
-    Search:
-    - mwext-WikibaseCirrusSearch/
-    - mwext-WikibaseLexemeCirrusSearch/
+  WikibaseCloud:
+    - gh-wbaas-deploy/
+    - gh-wbaas-backup

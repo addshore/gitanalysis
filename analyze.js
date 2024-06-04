@@ -35,7 +35,22 @@ if (options.help) {
 // Get user input
 var configFile = options._[0];
 var skipAnalyze = options.noanalyze;
-var config = yaml.load(fs.readFileSync(configFile, 'utf8'));
+var rawConfig = yaml.load(fs.readFileSync(configFile, 'utf8'));
+
+// TODO add some basic validation for the config...
+
+// Config contains all of the data it needs per date (created from our rawConfig)
+var config = {}
+// There is a top level people key, within are keys for dates, and within are keys for team emails
+for (let date in rawConfig['people']) {
+    // Add a date key to the config
+    config[normalizeDate(date)] = {
+        team: rawConfig['people'][date]
+    }
+    // And then add the code and components to each of these entries
+    config[normalizeDate(date)].code = rawConfig['code']
+    config[normalizeDate(date)].components = rawConfig['components']
+}
 
 // Run the thing
 console.log("Running with config file " + configFile );
