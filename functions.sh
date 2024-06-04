@@ -10,15 +10,15 @@ function cloneOrFetch() {
 }
 
 # Take the raw git blame outputs (that are stored in files)
-# And add everythign up, creating a $targetDate.allcounts file for the repo
+# And add everythign up, creating a $targetDate/allcounts file for the repo
 function calculateCounts() {
     name=$1
     targetDate=$2
 
-    FILES=./data/$name/$targetDate.allfiles
+    FILES=./data/$name/$targetDate/allfiles
 
     # Create a fresh file for the final output counts
-    OUTPUT_COUNTS=./data/$name/$targetDate.allcounts
+    OUTPUT_COUNTS=./data/$name/$targetDate/allcounts
     touch $OUTPUT_COUNTS
     rm $OUTPUT_COUNTS
     touch $OUTPUT_COUNTS
@@ -33,7 +33,7 @@ function calculateCounts() {
             if [[ "$BLAME_LINE" =~ $REGEX ]]; then
                 ((AUTHORS["${BASH_REMATCH[2]}"]++))
             fi
-        done < "./data/${name}/${FILE_PATH}.${targetDate}.gitblame"
+        done < "./data/${name}/${targetDate}/${FILE_PATH}.gitblame"
         for i in "${!AUTHORS[@]}"
         do
             EMAIL=$i

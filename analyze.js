@@ -107,7 +107,7 @@ async function main() {
     }
 
     // Generate data for each component
-    let allCountsData = 'data/' + inputDate + '.allcounts'
+    let allCountsData = 'data/' + inputDate + '/allcounts'
     let teamEmails = input.team;
     let projectComponents = input.components;
     let compiledData = {
@@ -188,13 +188,13 @@ async function main() {
     })
 
     // Final output files
-    fs.writeFileSync("data/" + inputDate + ".allemails",foundEmails.join("\n"))
-    fs.writeFileSync("data/" + inputDate + ".ungrouped",ungroupedFiles.join("\n"))
-    fs.writeFileSync("data/" + inputDate + ".data",JSON.stringify(compiledData,null,'\t'))
+    fs.writeFileSync("data/" + inputDate + "/allemails",foundEmails.join("\n"))
+    fs.writeFileSync("data/" + inputDate + "/ungrouped",ungroupedFiles.join("\n"))
+    fs.writeFileSync("data/" + inputDate + "/data",JSON.stringify(compiledData,null,'\t'))
 
     // Markdown tableify
     let compiledMarkdown = tablemark(Object.values(compiledData))
-    fs.writeFileSync("data/" + inputDate + ".data.md",compiledMarkdown)
+    fs.writeFileSync("data/" + inputDate + "/data.md",compiledMarkdown)
     console.log(compiledMarkdown)
 
 }

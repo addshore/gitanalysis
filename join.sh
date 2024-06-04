@@ -3,8 +3,11 @@
 
 TARGET_DATE=$1
 
-OUTPUT_COUNTS=$TARGET_DATE.allcounts
-JOINED_OUTPUT_COUNTS=data/$TARGET_DATE.allcounts
+OUTPUT_COUNTS=$TARGET_DATE/allcounts
+JOINED_OUTPUT_COUNTS=data/$TARGET_DATE/allcounts
+
+# Make data/$TARGET_DATE dir if it doesn't exist
+mkdir -p data/$TARGET_DATE
 
 echo "Joining multiple repo blames"
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 # Fetches the git repo into ./data/<PROJECT_NAME> and gets .gitblame output for all of the files
-# Processes this into an easy to read <targetDate>.allcounts file which contains lines that look like:
+# Processes this into an easy to read <targetDate>/allcounts file which contains lines that look like:
 # <file> <email> <line count>
 # 
 # Examples:
@@ -19,7 +19,11 @@ echo "$PROJECT_NAME: Getting code for $PROJECT_REPO"
 cloneOrFetch $PROJECT_NAME $PROJECT_REPO
 MAIN_BRANCH=$(git --git-dir ./data/$PROJECT_NAME/.git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
 COMMIT=$(git --git-dir ./data/$PROJECT_NAME/.git rev-list -n 1 --before="$TARGET_DATE" $MAIN_BRANCH)
-FILES=./data/$PROJECT_NAME/$TARGET_DATE.allfiles
+FILES=./data/$PROJECT_NAME/$TARGET_DATE/allfiles
+
+# Make the dir and FILES file
+mkdir -p $(dirname "$FILES")
+touch "$FILES"
 
 if [ -z "$COMMIT" ]; then
     echo "No commit found for date"
@@ -49,7 +53,7 @@ FILE_COUNT=$(cat $FILES | wc -l)
 # Save blame for all of the files
 echo "$PROJECT_NAME: Generating blames for $FILE_COUNT files"
 while read FILE_PATH; do
-	OUTPUT_BLAME=./data/${PROJECT_NAME}/${FILE_PATH}.${TARGET_DATE}.gitblame
+	OUTPUT_BLAME=./data/${PROJECT_NAME}/${TARGET_DATE}/${FILE_PATH}.gitblame
 	OUTPUT_DIR=$(dirname "$OUTPUT_BLAME")
 	mkdir -p $OUTPUT_DIR
 	# -c forces the file name to NOT be included https://stackoverflow.com/a/33603112/4746236

@@ -5,4 +5,4 @@ source ./../../functions.sh
 
 calculateCounts testProject master
 
-cmp --silent ./data/testProject/master.allcounts ./data/testProject/master.allcounts.expected || echo "files are different" && exit 1
+cmp --silent ./data/testProject/master/allcounts ./data/testProject/master/allcounts.expected || echo "files are different" && exit 1
