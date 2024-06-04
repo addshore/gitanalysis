@@ -41,12 +41,22 @@ var rawConfig = yaml.load(fs.readFileSync(configFile, 'utf8'));
 
 // Config contains all of the data it needs per date (created from our rawConfig)
 var config = {}
-// There is a top level people key, within are keys for dates, and within are keys for team emails
-for (let date in rawConfig['people']) {
-    // Add a date key to the config
-    config[normalizeDate(date)] = {
-        team: rawConfig['people'][date]
+// There is a top level snapshots key, within are keys for dates, and within are keys for people names (which map to emails)
+for (let date in rawConfig['snapshots']) {
+    // Create an entry for this date
+    config[normalizeDate(date)] = {}
+    // And then add the team emails to this entry, using rawConfig['people'][person] as the mapping
+    let peopleForSnapshot = []
+    for (let personKey in rawConfig['snapshots'][date]) {
+        let person = rawConfig['snapshots'][date][personKey]
+        // Make sure the key exists or exit
+        if(!rawConfig['people'].hasOwnProperty(person)) {
+            console.log("Person " + person + " does not exist in the people list!")
+            exit()
+        }
+        peopleForSnapshot = peopleForSnapshot.concat(rawConfig['people'][person])
     }
+    config[normalizeDate(date)].team = peopleForSnapshot
     // And then add the code and components to each of these entries
     config[normalizeDate(date)].code = rawConfig['code']
     config[normalizeDate(date)].components = rawConfig['components']

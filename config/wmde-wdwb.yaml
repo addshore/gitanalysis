@@ -1,173 +1,206 @@
 ---
 people:
-  2024-06-01:
-    - quetzlcoatlus@gmail.com
-    - dan.shick@wikimedia.de
-    - guergana.tzatchkova@wikimedia.de
-    - hoo@online.de
-    - itamar.givon.dev@gmail.com
-    - itamar.givon@wikimedia.de
-    - jakob.warkotsch@wikimedia.de
-    - j.warkotsch@gmail.com
-    - lucas.werkmeister@wikimedia.de
-    - noa.rave@wikimedia.de
-    - perside.rosalie@wikimedia.de
-    - sarai.sanchez@wikimedia.de
-    - silvan.heintze@wikimedia.de
-    - thomas.arrow_ext@wikimedia.de
-    - tarrow@users.noreply.github.com
-    - bomarrow1@gmail.com
-    - thomasarrow@gmail.com
-    - dat.nguyen@wikimedia.de
-    - 67963068+raja-wmde@users.noreply.github.com
-    - hasan.akguen@wikimedia.de
-    - oliver.shotton@wikimedia.de
-    - outdooracorn@gmail.com
-    - deniz.erdogan@wikimedia.de
-    - muhammad.jaziraly@extern.wikimedia.de
-    - muhammad.jaziraly@wikimedia.de
-    - arthur.taylor@wikimedia.de
-    - dima.koushha@wikimedia.de
-    - cynthia.makonyango@wikimedia.de
-    - loren.johnson@wikimedia.de
-    - rti@users.noreply.github.com
+  adee:
     - 132473526+adeeri@users.noreply.github.com
-    - frederik.ring@wikimedia.de
-  2024-01-01: 
-    - quetzlcoatlus@gmail.com
-    - dan.shick@wikimedia.de
-    - guergana.tzatchkova@wikimedia.de
-    - hoo@online.de
-    - itamar.givon.dev@gmail.com
-    - itamar.givon@wikimedia.de
-    - jakob.warkotsch@wikimedia.de
-    - j.warkotsch@gmail.com
-    - lucas.werkmeister@wikimedia.de
-    - mic.grosse@googlemail.com
-    - michael.grosse@wikimedia.de
-    - noa.rave@wikimedia.de
-    - perside.rosalie@wikimedia.de
-    - sarai.sanchez@wikimedia.de
-    - silvan.heintze@wikimedia.de
-    - thomas.arrow_ext@wikimedia.de
-    - tarrow@users.noreply.github.com
-    - bomarrow1@gmail.com
-    - thomasarrow@gmail.com
-    - dat.nguyen@wikimedia.de
-    - 67963068+raja-wmde@users.noreply.github.com
-    - hasan.akguen@wikimedia.de
-    - oliver.shotton@wikimedia.de
-    - outdooracorn@gmail.com
-    - deniz.erdogan@wikimedia.de
-    - muhammad.jaziraly@extern.wikimedia.de
-    - muhammad.jaziraly@wikimedia.de
+  addshore:
+    - addshorewiki@gmail.com
+    - adamshorland@gmail.com
+    - addshore@users.noreply.github.com
+    - adam.shorland@wikimedia.de
+  arthur:
     - arthur.taylor@wikimedia.de
-    - loren.johnson@wikimedia.de
-    - rti@users.noreply.github.com
-    - 132473526+adeeri@users.noreply.github.com
-    - frederik.ring@wikimedia.de
-  2023-01-01: 
-    - addshorewiki@gmail.com
-    - adamshorland@gmail.com
-    - addshore@users.noreply.github.com
-    - adam.shorland@wikimedia.de
-    - quetzlcoatlus@gmail.com
-    - dan.shick@wikimedia.de
-    - guergana.tzatchkova@wikimedia.de
-    - hoo@online.de
-    - itamar.givon.dev@gmail.com
-    - itamar.givon@wikimedia.de
-    - jakob.warkotsch@wikimedia.de
-    - j.warkotsch@gmail.com
-    - lucas.werkmeister@wikimedia.de
-    - mic.grosse@googlemail.com
-    - michael.grosse@wikimedia.de
-    - noa.rave@wikimedia.de
-    - perside.rosalie@wikimedia.de
-    - sarai.sanchez@wikimedia.de
-    - silvan.heintze@wikimedia.de
-    - thomas.arrow_ext@wikimedia.de
-    - tarrow@users.noreply.github.com
-    - bomarrow1@gmail.com
-    - thomasarrow@gmail.com
-    - dat.nguyen@wikimedia.de
-    - 67963068+raja-wmde@users.noreply.github.com
-    - hasan.akguen@wikimedia.de
-    - oliver.shotton@wikimedia.de
-    - outdooracorn@gmail.com
-    - deniz.erdogan@wikimedia.de
-    - muhammad.jaziraly@extern.wikimedia.de
-    - muhammad.jaziraly@wikimedia.de
-  2022-01-01: 
-    - addshorewiki@gmail.com
-    - adamshorland@gmail.com
-    - addshore@users.noreply.github.com
-    - adam.shorland@wikimedia.de
-    - quetzlcoatlus@gmail.com
-    - dan.shick@wikimedia.de
-    - guergana.tzatchkova@wikimedia.de
-    - hoo@online.de
-    - itamar.givon.dev@gmail.com
-    - itamar.givon@wikimedia.de
-    - jakob.warkotsch@wikimedia.de
-    - j.warkotsch@gmail.com
-    - jan.dittrich@wikimedia.de
-    - lucas.werkmeister@wikimedia.de
-    - mic.grosse@googlemail.com
-    - michael.grosse@wikimedia.de
-    - noa.rave@wikimedia.de
-    - perside.rosalie@wikimedia.de
-    - sarai.sanchez@wikimedia.de
-    - silvan.heintze@wikimedia.de
-    - thomas.arrow_ext@wikimedia.de
-    - tarrow@users.noreply.github.com
-    - bomarrow1@gmail.com
-    - thomasarrow@gmail.com
-    - tobias.andersson@wikimedia.de
-    - tobias.ande@gmail.com
-    - dat.nguyen@wikimedia.de
-    - 67963068+raja-wmde@users.noreply.github.com
-    - hanna.petruschat@wikimedia.de
-    - 45200197+hanna-p-wmde@users.noreply.github.com
-    - oliver.shotton@wikimedia.de
-    - outdooracorn@gmail.com
-    - deniz.erdogan@wikimedia.de
-  2021-01-01: 
-    - addshorewiki@gmail.com
-    - adamshorland@gmail.com
-    - addshore@users.noreply.github.com
-    - adam.shorland@wikimedia.de
-    - quetzlcoatlus@gmail.com
+  bereket:
     - bereket.teshome@wikimedia.de
-    - 71328938+bereket-WMDE@users.noreply.github.com
+  cynthia:
+    - cynthia.makonyango@wikimedia.de
+  dan.shick:
     - dan.shick@wikimedia.de
+  dat:
+    - dat.nguyen@wikimedia.de
+  deniz:
+    - deniz.erdogan@wikimedia.de
+  dima:
+    - dima.koushha@wikimedia.de
+  frederik:
+    - frederik.ring@wikimedia.de
+  guergana:
     - guergana.tzatchkova@wikimedia.de
+  hasan:
+    - hasan.akguen@wikimedia.de
+  hanna:
+    - 45200197+hanna-p-wmde@users.noreply.github.com
+    - hanna.petruschat@wikimedia.de
+  hoo:
     - hoo@online.de
-    - itamar.givon.dev@gmail.com
+    - mail@mariushoch.de
+    - marius.hoch@wikimedia.de
+  itamar:
     - itamar.givon@wikimedia.de
+    - itamar.givon.dev@gmail.com
+  jakob:
     - jakob.warkotsch@wikimedia.de
     - j.warkotsch@gmail.com
+  jan.dittrich:
     - jan.dittrich@wikimedia.de
+  ladsgroup:
     - ladsgroup@gmail.com
     - Ladsgroup@gmail.com
+  loren:
+    - loren.johnson@wikimedia.de
+  lucas:
     - lucas.werkmeister@wikimedia.de
-    - mic.grosse@googlemail.com
+  michael:
     - michael.grosse@wikimedia.de
+    - mic.grosse@googlemail.com
+  muhammad:
+    - muhammad.jaziraly@extern.wikimedia.de
+    - muhammad.jaziraly@wikimedia.de
+  noa:
     - noa.rave@wikimedia.de
+  oliver:
+    - oliver.shotton@wikimedia.de
+    - outdooracorn@gmail.com
+  quetzlcoatlus:
+    - quetzlcoatlus@gmail.com
+  raja:
+    - 67963068+raja-wmde@users.noreply.github.com
+  rosalie:
     - perside.rosalie@wikimedia.de
+  rti:
+    - rti@users.noreply.github.com
+  sarai:
     - sarai.sanchez@wikimedia.de
+  silvan:
     - silvan.heintze@wikimedia.de
+    - 59574251+Silvan-WMDE@users.noreply.github.com
+  tobias:
+    - tobias.andersson@wikimedia.de
+    - tobias.ande@gmail.com
+  tom:
     - thomas.arrow_ext@wikimedia.de
     - tarrow@users.noreply.github.com
     - bomarrow1@gmail.com
     - thomasarrow@gmail.com
-    - tobias.andersson@wikimedia.de
-    - tobias.ande@gmail.com
+  tonina:
     - tonina.zhelyazkova@wikimedia.de
-    - dat.nguyen@wikimedia.de
-    - 67963068+raja-wmde@users.noreply.github.com
-    - hanna.petruschat@wikimedia.de
-    - 45200197+hanna-p-wmde@users.noreply.github.com
+snapshots:
+  2024-06-01:
+    - quetzlcoatlus
+    - dan.shick
+    - guergana
+    - hoo
+    - itamar
+    - tom
+    - silvan
+    - oliver
+    - muhammad
+    - jakob
+    - lucas
+    - noa
+    - rosalie
+    - sarai
+    - dat
+    - raja
+    - hasan
+    - deniz
+    - arthur
+    - dima
+    - cynthia
+    - loren
+    - rti
+    - adee
+    - frederik
+  2024-01-01: 
+    - quetzlcoatlus
+    - dan.shick
+    - guergana
+    - hoo
+    - itamar
+    - jakob
+    - lucas
+    - michael
+    - noa
+    - rosalie
+    - sarai
+    - silvan
+    - tom
+    - dat
+    - raja
+    - hasan
+    - oliver
+    - deniz
+    - muhammad
+    - arthur
+    - loren
+    - rti
+    - adee
+    - frederik
+  2023-01-01: 
+    - addshore
+    - quetzlcoatlus
+    - dan.shick
+    - guergana
+    - hoo
+    - itamar
+    - jakob
+    - lucas
+    - michael
+    - noa
+    - rosalie
+    - sarai
+    - silvan
+    - tom
+    - dat
+    - raja
+    - hasan
+    - oliver
+    - deniz
+    - muhammad
+  2022-01-01: 
+    - addshore
+    - quetzlcoatlus
+    - dan.shick
+    - guergana
+    - hoo
+    - itamar
+    - jakob
+    - jan.dittrich
+    - lucas
+    - michael
+    - noa
+    - rosalie
+    - sarai
+    - silvan
+    - tom
+    - tobias
+    - dat
+    - raja
+    - hanna
+    - oliver
+    - deniz
+  2021-01-01: 
+    - addshore
+    - quetzlcoatlus
+    - bereket
+    - dan.shick
+    - guergana
+    - hoo
+    - itamar
+    - jakob
+    - jan.dittrich
+    - ladsgroup
+    - lucas
+    - michael
+    - noa
+    - rosalie
+    - sarai
+    - silvan
+    - tom
+    - tobias
+    - tonina
+    - dat
+    - raja
+    - hanna
 code:
   mwext-Wikibase: https://github.com/wikimedia/Wikibase.git
   mwext-Wikibase-sub-view-lib-value-view: https://gerrit.wikimedia.org/r/data-values/value-view
