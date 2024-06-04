@@ -14,9 +14,7 @@ PROJECT_NAME=$1
 PROJECT_REPO=$2
 TARGET_DATE=$3
 
-# Get the code
-echo "$PROJECT_NAME: Getting code for $PROJECT_REPO"
-cloneOrFetch $PROJECT_NAME $PROJECT_REPO
+# Code stuff
 MAIN_BRANCH=$(git --git-dir ./data/$PROJECT_NAME/.git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
 COMMIT=$(git --git-dir ./data/$PROJECT_NAME/.git rev-list -n 1 --before="$TARGET_DATE" $MAIN_BRANCH)
 FILES=./data/$PROJECT_NAME/$TARGET_DATE/allfiles

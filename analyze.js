@@ -61,7 +61,32 @@ function normalizeDate(date) {
 
 // The mainmain function...
 async function mainmain() {
-    // For each date requested
+    // Firstly collect all git repos from all dates in the config
+    let allRepos = []
+    for (let date in config) {
+        let input = config[date]
+        for (let projectName in input.code) {
+            let projectRepo = input.code[projectName]
+            allRepos.push(projectRepo)
+        }
+    }
+    allRepos = [...new Set(allRepos)]
+    // And then make sure we have them all on disk, for all of the processing to access
+    let codeFetchProcesses = [];
+    for (let i = 0; i < allRepos.length; i++) {
+        let projectRepo = allRepos[i]
+        let projectName = projectRepo.split('/').pop().split('.')[0]
+        codeFetchProcesses.push(spawnWithOut(spawn("./getcode.sh", [projectName, projectRepo])));
+    }
+    // Wait for them to finish running
+    let nonZeroExitCode = await waitForAllProccesses(codeFetchProcesses)
+    // Bail if one of the scripts broke
+    if(nonZeroExitCode) {
+        console.log("Got a non zero exit code D:")
+        exit(1)
+    }
+
+    // Run the main function for each date requested
     for (let date in config) {
         let normalDate = normalizeDate(date)
         console.log("Running on date " + normalDate );
@@ -117,18 +142,7 @@ async function mainmain() {
     console.log(compiledMarkdown)
 }
 
-// The main function...
-async function main(inputDate, input) {
-    // Collect the input for each repo...
-    let childProcesses = [];
-    if(!skipAnalyze) {
-        for (let projectName in input.code) {
-            let projectRepo = input.code[projectName]
-            childProcesses.push(spawnWithOut(spawn("./analyze.sh", [projectName, projectRepo, inputDate])));
-        }
-    }
-
-    // Wait for them to finish running
+async function waitForAllProccesses(childProcesses) {
     let waitingForProcessing = true;
     let nonZeroExitCode = false;
     while (waitingForProcessing) {
@@ -144,8 +158,25 @@ async function main(inputDate, input) {
                 nonZeroExitCode = process.exitCode
             }
         }
+        // wait 10ms
+        await new Promise(resolve => setTimeout(resolve, 10))
+    }
+    return nonZeroExitCode
+}
+
+// The main function...
+async function main(inputDate, input) {
+    // Collect the input for each repo...
+    let childProcesses = [];
+    if(!skipAnalyze) {
+        for (let projectName in input.code) {
+            let projectRepo = input.code[projectName]
+            childProcesses.push(spawnWithOut(spawn("./analyze.sh", [projectName, projectRepo, inputDate])));
+        }
     }
 
+    // Wait for them to finish running
+    let nonZeroExitCode = await waitForAllProccesses(childProcesses)
     // Bail if one of the scripts broke
     if(nonZeroExitCode) {
         console.log("Got a non zero exit code D:")

@@ -28,7 +28,7 @@
     gh-WikibaseDataModelSerialization: https://github.com/wmde/WikibaseDataModelSerialization.git
     gh-WikibaseInternalSerialization: https://github.com/wmde/WikibaseInternalSerialization.git
     gh-query-gui: https://gerrit.wikimedia.org/r/wikidata/query/gui
-    gh-query-builder: https://gerrit.wikimedia.org/r/wikidata/query/builder
+    gh-query-builder: https://gerrit.wikimedia.org/r/wikidata/query-builder
     gh-php-vuejs-templating: https://github.com/wmde/php-vuejs-templating.git
     gh-wikibase-release-pipeline: https://github.com/wmde/wikibase-release-pipeline.git
     gh-wikibase-docker: https://github.com/wmde/wikibase-docker.git
@@ -157,7 +157,7 @@
     gh-WikibaseDataModelSerialization: https://github.com/wmde/WikibaseDataModelSerialization.git
     gh-WikibaseInternalSerialization: https://github.com/wmde/WikibaseInternalSerialization.git
     gh-query-gui: https://gerrit.wikimedia.org/r/wikidata/query/gui
-    gh-query-builder: https://gerrit.wikimedia.org/r/wikidata/query/builder
+    gh-query-builder: https://gerrit.wikimedia.org/r/wikidata/query-builder
     gh-php-vuejs-templating: https://github.com/wmde/php-vuejs-templating.git
     gh-wikibase-release-pipeline: https://github.com/wmde/wikibase-release-pipeline.git
     gh-wikibase-docker: https://github.com/wmde/wikibase-docker.git
@@ -287,7 +287,7 @@
     gh-WikibaseDataModelSerialization: https://github.com/wmde/WikibaseDataModelSerialization.git
     gh-WikibaseInternalSerialization: https://github.com/wmde/WikibaseInternalSerialization.git
     gh-query-gui: https://gerrit.wikimedia.org/r/wikidata/query/gui
-    gh-query-builder: https://gerrit.wikimedia.org/r/wikidata/query/builder
+    gh-query-builder: https://gerrit.wikimedia.org/r/wikidata/query-builder
     gh-php-vuejs-templating: https://github.com/wmde/php-vuejs-templating.git
     gh-wikibase-release-pipeline: https://github.com/wmde/wikibase-release-pipeline.git
     gh-wikibase-docker: https://github.com/wmde/wikibase-docker.git
@@ -420,7 +420,7 @@
     gh-WikibaseDataModelSerialization: https://github.com/wmde/WikibaseDataModelSerialization.git
     gh-WikibaseInternalSerialization: https://github.com/wmde/WikibaseInternalSerialization.git
     gh-query-gui: https://gerrit.wikimedia.org/r/wikidata/query/gui
-    gh-query-builder: https://gerrit.wikimedia.org/r/wikidata/query/builder
+    gh-query-builder: https://gerrit.wikimedia.org/r/wikidata/query-builder
     gh-php-vuejs-templating: https://github.com/wmde/php-vuejs-templating.git
     gh-wikibase-release-pipeline: https://github.com/wmde/wikibase-release-pipeline.git
     gh-wikibase-docker: https://github.com/wmde/wikibase-docker.git
@@ -556,7 +556,7 @@
     gh-WikibaseDataModelSerialization: https://github.com/wmde/WikibaseDataModelSerialization.git
     gh-WikibaseInternalSerialization: https://github.com/wmde/WikibaseInternalSerialization.git
     gh-query-gui: https://gerrit.wikimedia.org/r/wikidata/query/gui
-    gh-query-builder: https://gerrit.wikimedia.org/r/wikidata/query/builder
+    gh-query-builder: https://gerrit.wikimedia.org/r/wikidata/query-builder
     gh-php-vuejs-templating: https://github.com/wmde/php-vuejs-templating.git
     gh-wikibase-release-pipeline: https://github.com/wmde/wikibase-release-pipeline.git
     gh-wikibase-docker: https://github.com/wmde/wikibase-docker.git
