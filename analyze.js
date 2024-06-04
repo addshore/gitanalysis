@@ -11,7 +11,7 @@ const yaml = require('js-yaml');
  */
 
 var optionator = require('optionator')({
-    prepend: 'Usage: ganalyze [options] input.yaml <date>',
+    prepend: 'Usage: ganalyze [options] input.yaml',
     append: 'Version 0.0.0',
     options: [{
         option: 'help',
@@ -22,7 +22,7 @@ var optionator = require('optionator')({
         option: 'noanalyze',
         type: 'Boolean',
         description: 'Don\'t re-analyze, use existing data',
-        example: 'ganalyze --noanalyze input.yaml <date>'
+        example: 'ganalyze --noanalyze input.yaml'
     }]
 });
 
@@ -33,20 +33,13 @@ if (options.help) {
 }
 
 // Get user input
-var inputFile = options._[0];
-var inputDate = options._[1];
+var configFile = options._[0];
 var skipAnalyze = options.noanalyze;
-var input = yaml.load(fs.readFileSync(inputFile, 'utf8'));
-// Fallback to today if no date is defined
-if(inputDate == undefined) {
-    let currentDate = new Date();
-    inputDate=currentDate.getFullYear() + '-' + (currentDate.getMonth() + 1) + '-' + currentDate.getDate()
-}
+var config = yaml.load(fs.readFileSync(configFile, 'utf8'));
 
 // Run the thing
-
-console.log("Running for input file " + inputFile + " and date " + inputDate);
-main();
+console.log("Running with config file " + configFile );
+mainmain();
 
 function spawnWithOut(childProcess) {
     childProcess.stdout.on('data', function (data) {
@@ -61,12 +54,73 @@ function spawnWithOut(childProcess) {
     return childProcess
 }
 
+function normalizeDate(date) {
+    let dateObj = new Date(date)
+    return dateObj.getFullYear() + '-' + (dateObj.getMonth() + 1) + '-' + dateObj.getDate()
+}
+
+// The mainmain function...
+async function mainmain() {
+    // For each date requested
+    for (let date in config) {
+        let normalDate = normalizeDate(date)
+        console.log("Running on date " + normalDate );
+        await main(normalDate, config[date]);
+    }
+
+    // FINAL FINAL processing
+    console.log("Final processing")
+    let allEmails = []
+    // All data will end up being a table
+    // Each object in the table is a row, with keys of the column names
+    // We aim for component names in column A, and then the rest of the columns are the data
+    // The headings are the date, and the actual data is the team% for that date
+    let allData = {}
+    for (let date in config) {
+        console.log("Processing " + date)
+        let normalDate = normalizeDate(date)
+
+        let emails = fs.readFileSync("data/" + normalDate + "/allemails", 'utf8').split("\n")
+        allEmails = allEmails.concat(emails)
+
+        let data = JSON.parse(fs.readFileSync("data/" + normalDate + "/data", 'utf8'))
+        for(let i = 0; i < data.length; i++){
+            let dataRow = data[i]
+            let componentName = dataRow.name
+            let teamPercent = dataRow["team%"]
+            // Try to find the row, representing the component
+            if(!allData.hasOwnProperty(componentName)){
+                allData[componentName] = {
+                    name: componentName
+                }
+            }
+            // Add the data to the row
+            allData[componentName][normalDate] = teamPercent
+        }
+    }
+
+    console.log("Final output...")
+
+    // Make allEmails unique and sort
+    allEmails = [...new Set(allEmails)]
+    allEmails.sort()
+
+    // Output all emails
+    fs.writeFileSync("data/allemails",allEmails.join("\n"))
+
+    // Output all data
+    fs.writeFileSync("data/data",JSON.stringify(allData,null,'\t'))
+
+    // And output it as a markdown table
+    let compiledMarkdown = tablemark(Object.values(allData))
+    fs.writeFileSync("data/data.md",compiledMarkdown)
+    console.log(compiledMarkdown)
+}
 
 // The main function...
-async function main() {
-
+async function main(inputDate, input) {
     // Collect the input for each repo...
-    var childProcesses = [];
+    let childProcesses = [];
     if(!skipAnalyze) {
         for (let projectName in input.code) {
             let projectRepo = input.code[projectName]
