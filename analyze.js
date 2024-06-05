@@ -170,6 +170,14 @@ async function mainmainOutput() {
         }
     }
 
+    // Put a couple of things first
+    let ungrouped = allData["ungrouped"]
+    delete allData["ungrouped"]
+    allData = {ungrouped: ungrouped, ...allData}
+    let total = allData["Total"]
+    delete allData["Total"]
+    allData = {Total: total, ...allData}
+
     console.log("Final output...")
 
     // Make allEmails unique and sort
